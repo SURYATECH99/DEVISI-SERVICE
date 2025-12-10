@@ -33,11 +33,7 @@
             line-height: 1.6; 
             scroll-behavior: smooth;
         }
-        .container {
-            max-width: 1100px; 
-            margin: 40px auto; 
-            padding: 0 25px;
-        }
+        .container {max-width: 1100px; margin: 40px auto; padding: 0 25px;}
         .section {
             background-color: var(--bg-white); 
             padding: 60px; 
@@ -68,7 +64,6 @@
             display: flex;
             justify-content: space-between; 
             align-items: center;
-            flex-direction: row; 
         }
         .nav-links {
             display: flex;
@@ -84,6 +79,8 @@
             position: relative;
             transition: color 0.3s;
         }
+        
+        /* Styling Logo Teks (Pengganti Gambar) */
         .navbar-logo {
             font-size: 1.6em;
             font-weight: 800; 
@@ -102,19 +99,22 @@
             color: var(--secondary-color);
         }
         
-        /* Hamburger Menu (Sembunyikan di Desktop) */
-        .hamburger-menu {
-            display: none; 
-            font-size: 1.5em;
-            color: white;
-            cursor: pointer;
-        }
-
         @media (min-width: 769px) {
              .navbar-content {
-                justify-content: space-between; 
-                flex-direction: row;
+                justify-content: center; 
+                flex-direction: column;
                 gap: 10px;
+            }
+            .navbar-logo {
+                margin-bottom: 5px; 
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar-content {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 10px;
             }
         }
 
@@ -142,7 +142,6 @@
             color: var(--text-color);
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(255, 183, 0, 0.3);
-            text-align: center;
         }
         .warranty-box h3 {
             margin: 0 0 5px 0;
@@ -194,6 +193,8 @@
         .layanan-item:hover i {
             color: var(--secondary-color); 
         }
+        
+        /* Styling Tombol CTA Besar di Bawah Layanan */
         .layanan-cta-button {
             display: block;
             width: fit-content;
@@ -210,6 +211,7 @@
             box-shadow: 0 8px 20px rgba(32, 142, 67, 0.4);
             transition: background-color 0.3s, transform 0.3s;
         }
+
         .layanan-cta-button:hover {
             background-color: #179c3f; 
             transform: scale(1.05); 
@@ -222,6 +224,7 @@
             text-align: center;
             margin-bottom: 30px;
         }
+        
         .price-tab-button {
             padding: 10px 25px;
             margin: 0 5px 15px 5px;
@@ -236,17 +239,20 @@
             text-transform: uppercase;
             outline: none; 
         }
+
         .price-tab-button:hover {
             background-color: var(--primary-color);
             color: white;
             box-shadow: 0 4px 10px rgba(0, 74, 153, 0.2);
         }
+
         .price-tab-button.active {
             background-color: var(--primary-color);
             color: white;
             box-shadow: 0 4px 15px rgba(0, 74, 153, 0.4);
             transform: translateY(-2px);
         }
+        
         .price-content {
             display: none;
             overflow-x: auto; 
@@ -254,6 +260,7 @@
         .price-content.active {
             display: block;
         }
+        
         .price-content table {
             margin: 0 auto; 
             max-width: 800px;
@@ -281,7 +288,7 @@
 
 
         /* ===================================================================
-           PROCESS FLOW STYLING 
+           PROCESS FLOW STYLING (VISUAL)
         =================================================================== */
         .process-flow {
             display: flex;
@@ -297,9 +304,8 @@
             top: 65px; 
             left: 10%;
             right: 10%;
-            height: 6px; 
-            background: linear-gradient(to right, #e0e0e0, var(--secondary-color), #e0e0e0); 
-            border-radius: 3px;
+            height: 4px;
+            background-color: var(--secondary-color);
             z-index: 1; 
         }
         .step {
@@ -308,211 +314,36 @@
             position: relative;
             z-index: 2; 
             padding: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .step:hover {
-            transform: translateY(-8px);
         }
         .step-icon {
             width: 80px; 
             height: 80px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #007bff 100%); 
+            background-color: var(--primary-color);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 15px auto;
-            box-shadow: 0 8px 25px rgba(0, 74, 153, 0.4); 
-            border: 6px solid var(--bg-white); 
-            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 5px solid var(--bg-white); 
+            transition: transform 0.3s;
         }
-        .step:nth-child(even) .step-icon {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #ffc107 100%);
-            box-shadow: 0 8px 25px rgba(255, 183, 0, 0.5); 
+        .step:hover .step-icon {
+            transform: scale(1.1);
         }
         .step-icon i {
             color: white;
             font-size: 2.2em;
-            transition: all 0.5s;
         }
-        
-        /* Animasi: Hanya ikon gear (langkah 3) yang berputar */
-        .step:nth-child(3) .step-icon i {
-            animation: rotate-icon 4s infinite linear;
-        }
-        @keyframes rotate-icon {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Animasi KHUSUS untuk Langkah 4 (Quality Check) */
-        .step:nth-child(4) .step-icon i {
-            animation: pulse-check 2s infinite ease-in-out;
-        }
-        @keyframes pulse-check {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); color: var(--success-color); } 
-            100% { transform: scale(1); }
-        }
-
         .step h4 {
             color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.2em;
+            font-weight: 600;
+            font-size: 1.1em;
             margin-bottom: 5px;
-            margin-top: 15px; 
         }
 
-
-        /* ===================================================================
-           DELIVERY PROMO STYLING 
-        =================================================================== */
-        .delivery-promo {
-            background: linear-gradient(90deg, var(--primary-color) 0%, #0060c0 100%); 
-            color: white; 
-            padding: 50px 30px; 
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 74, 153, 0.5); 
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        .delivery-promo h3 {
-            font-size: 2.2em; 
-            font-weight: 800;
-            color: var(--secondary-color); 
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        .delivery-promo p {
-            font-size: 1.2em; 
-            max-width: 700px;
-            margin: 15px auto 30px auto;
-            color: #f0f0f0; 
-        }
-        .delivery-promo .delivery-icon-large {
-            font-size: 4.5em; 
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            display: block;
-            animation: pulse-icon 2s infinite, bounce-icon 3s ease-in-out infinite; 
-        }
-        @keyframes pulse-icon {0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); }}
-        @keyframes bounce-icon {0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); }}
-        .delivery-promo a {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: var(--success-color); 
-            color: white !important;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: background-color 0.3s, transform 0.3s;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(32, 142, 67, 0.5);
-        }
-        .delivery-promo a:hover {
-            background-color: #179c3f;
-            transform: scale(1.05);
-        }
-
-
-        /* ===================================================================
-           FOOTER & FAB WA STYLES 
-        =================================================================== */
-        footer {
-            background-color: var(--primary-color); 
-            color: white; 
-            padding: 30px 20px; 
-            font-size: 1em; 
-            text-align: center; 
-            margin-top: 40px; 
-            border-radius: 15px;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        footer a {
-            color: var(--secondary-color); 
-            text-decoration: none;
-            font-weight: 700; 
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: #ffd866; 
-            text-decoration: underline;
-        }
-        
-        .fab-container {position: fixed; bottom: 20px; right: 20px; z-index: 1000;}
-        .fab {display: block; width: 60px; height: 60px; background-color: var(--success-color); color: white; border-radius: 50%; text-align: center; line-height: 60px; font-size: 2.2em; box-shadow: 0 4px 15px rgba(32, 142, 67, 0.6); transition: transform 0.3s ease;}
-        .fab:hover {transform: scale(1.15); }
-
-
-        /* ===================================================================
-           RESPONSIVE MOBILE DESIGN (Max 768px)
-        =================================================================== */
+        /* Responsive untuk Process Flow */
         @media (max-width: 768px) {
-            
-            /* Global Adjustments */
-            .container { margin: 20px auto; padding: 0 15px; }
-            .section { padding: 30px 20px; }
-            .section h2 { font-size: 1.8em; margin-bottom: 30px; }
-            
-            /* FIX UTAMA: Navbar Mobile - Gunakan Hamburger */
-            .navbar { padding: 15px 0; }
-            .navbar-content { 
-                flex-direction: row; 
-                justify-content: space-between; 
-                align-items: center; 
-            }
-            .hamburger-menu {
-                display: block; /* Tampilkan Hamburger di mobile */
-            }
-            .nav-links { 
-                /* Menyembunyikan dan memposisikan menu di mobile */
-                display: none; 
-                position: absolute;
-                top: 55px; /* Kurangi tinggi untuk mobile */
-                left: 0;
-                right: 0;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                text-align: center;
-                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-                padding: 10px 0;
-                z-index: 999;
-            }
-            .nav-links.active {
-                display: flex; /* Tampilkan menu saat aktif */
-            }
-            .nav-links a { 
-                margin: 10px 0; 
-                padding: 10px 0;
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
-
-            /* Header Adjustment: Kurangi padding header agar konten cepat terlihat */
-            .header-parallax { 
-                padding: 50px 0; /* Jauh lebih kecil di mobile */
-            }
-            .header-content h1 { font-size: 1.8em; }
-            .header-content p { font-size: 1em; }
-
-            /* Delivery Promo Adjustment */
-            .delivery-promo { padding: 30px 15px; }
-            .delivery-promo h3 { font-size: 1.6em; }
-            .delivery-promo p { font-size: 1em; }
-            .delivery-promo a { padding: 12px 30px; font-size: 1em; }
-            
-            /* Price Table Adjustment */
-            .price-tabs-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
-            .price-tab-button { flex: 1 1 45%; margin: 5px 0; }
-            .price-content { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .price-content table { min-width: 500px; }
-
-            /* Process Flow Adjustment: Ubah menjadi vertikal di mobile */
             .process-flow {
                 flex-direction: column;
                 padding-top: 0;
@@ -521,10 +352,9 @@
                 top: 0;
                 left: 30px; 
                 bottom: 0;
-                width: 6px; 
+                width: 4px;
                 right: auto;
                 height: 100%;
-                background: linear-gradient(to bottom, #e0e0e0, var(--secondary-color), #e0e0e0); 
             }
             .step {
                 flex-basis: 100%;
@@ -538,24 +368,156 @@
                 margin: 0;
                 flex-shrink: 0; 
             }
-            
-            /* Testimonial Adjustment */
-            .testimonial-grid { flex-direction: column; gap: 15px; }
-            .testimonial-card { max-width: 100%; }
-
-            /* Pengetahuan Wajib Layout */
-            div[style*="display: flex;"] { flex-direction: column; }
-            div[style*="border-left: 5px solid"] { margin-bottom: 15px; }
-            
-            /* FAB WA */
-            .fab { width: 50px; height: 50px; line-height: 50px; font-size: 1.8em; }
-
-            /* Footer Responsive */
-            footer {
-                padding: 20px 15px;
-                font-size: 0.9em;
-            }
         }
+        
+        /* ===================================================================
+           DELIVERY PROMO STYLING (SUDAH DIPERBAIKI)
+        =================================================================== */
+        .delivery-promo {
+            /* Perubahan di sini: Menggunakan gradien biru dengan primary color */
+            background: linear-gradient(90deg, var(--primary-color) 0%, #0060c0 100%); 
+            color: white; /* Ganti warna teks menjadi putih agar kontras */
+            padding: 50px 30px; 
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 74, 153, 0.5); /* Box Shadow lebih menonjol dan biru */
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .delivery-promo h3 {
+            font-size: 2.2em; 
+            font-weight: 800;
+            margin-top: 0;
+            color: var(--secondary-color); /* Judul menggunakan warna orange */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .delivery-promo p {
+            font-size: 1.2em; 
+            max-width: 700px;
+            margin: 15px auto 30px auto;
+            color: #f0f0f0; 
+        }
+
+        .delivery-promo .delivery-icon-large {
+            font-size: 4.5em; /* Diperbesar */
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: block;
+            /* Animasi tambahan: pulse & bounce */
+            animation: pulse-icon 2s infinite, bounce-icon 3s ease-in-out infinite; 
+        }
+        
+        @keyframes pulse-icon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes bounce-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .delivery-promo a {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--success-color); /* Tombol CTA menggunakan warna Sukses/Hijau */
+            color: white !important;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(32, 142, 67, 0.5);
+        }
+
+        .delivery-promo a:hover {
+            background-color: #179c3f;
+            transform: scale(1.05);
+        }
+
+        /* ===================================================================
+           TESTIMONIAL STYLING
+        =================================================================== */
+        .testimonial-grid {
+             display: flex;
+             gap: 20px;
+             flex-wrap: wrap; 
+             justify-content: center; 
+        }
+        .testimonial-card {
+             background-color: #f8f9fa;
+             padding: 25px;
+             border-radius: 12px;
+             flex: 1; 
+             min-width: 250px; 
+             max-width: 350px; 
+             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+             border-left: 4px solid var(--secondary-color);
+             margin-bottom: 10px;
+        }
+        .testimonial-card p {
+             font-style: italic;
+             margin-bottom: 15px;
+             color: #495057;
+        }
+        .testimonial-card h4 {
+             text-align: right;
+             color: var(--primary-color);
+             margin: 0;
+             font-weight: 600;
+             font-size: 1em;
+        }
+
+
+        /* ===================================================================
+           FOOTER STYLING
+        =================================================================== */
+        footer {
+            background-color: var(--primary-color); 
+            color: white;
+            padding: 20px 0;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 40px; 
+            border-radius: 15px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: var(--secondary-color) !important;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: white !important;
+        }
+
+        /* FAB WA */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .fab {
+            display: block;
+            width: 60px;
+            height: 60px;
+            background-color: var(--success-color); 
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 2.2em;
+            box-shadow: 0 4px 15px rgba(32, 142, 67, 0.6);
+            transition: transform 0.3s ease;
+        }
+        .fab:hover {
+            transform: scale(1.15); 
+        }
+
     </style>
 </head>
 <body>
@@ -574,11 +536,7 @@
             <a href="#" class="navbar-logo">
                 <i class="fa-solid fa-screwdriver-wrench"></i> <span class="logo-brand">SURYA</span> TEKNISI
             </a>
-
-            <div class="hamburger-menu" id="hamburger-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="nav-links" id="nav-links">
+            <div class="nav-links">
                 <a href="#layanan">Layanan</a>
                 <a href="#harga">Harga</a>
                 <a href="#delivery">Antar Jemput</a>
@@ -598,7 +556,7 @@
     </div>
 
     <div class="container">
-        <section class="warranty-box" data-aos="zoom-in">
+        <section class="warranty-box" data-aos="zoom-in" style="text-align: center;">
             <h3>⭐ Jaminan Garansi Resmi Hingga 90 Hari!</h3>
             <p>Kami hanya menggunakan suku cadang berkualitas dan memberikan ketenangan pikiran dengan garansi purna jual.</p>
         </section>
@@ -633,9 +591,8 @@
 
         </section>
 
-        <section id="delivery" class="delivery-promo" data-aos="flip-down">
-            <i class="fa-solid fa-truck-fast delivery-icon-large"></i> 
-            <h3>🚀 EKSLUSIF SURABAYA! JEMPUT & ANTAR BALIK 100% GRATIS!</h3>
+        <section id="delivery" class="delivery-promo" data-aos="flip-down" style="text-align: center;">
+            <i class="fa-solid fa-truck-fast delivery-icon-large"></i> <h3>🚀 EKSLUSIF SURABAYA! JEMPUT & ANTAR BALIK 100% GRATIS!</h3>
             <p>Tidak perlu repot keluar rumah! Teknisi kami akan menjemput perangkat Anda dengan aman dan mengantarkannya kembali setelah service selesai. **Hemat Waktu, Tanpa Biaya Tambahan, Tinggal Duduk Santai!**</p>
             <a href="https://wa.me/6285198331549?text=Saya%20ingin%20memanfaatkan%20layanan%20antar%20jemput%20gratis%20untuk%20service%20HP%20di%20Surabaya." 
                target="_blank">
@@ -733,7 +690,7 @@
             </div>
         </section>
         
-        <section class="section" data-aos="fade-up">
+        <section class="section" data-aos="fade-up" style="text-align: center;">
              <h2>🧠 Pengetahuan Wajib Pengguna HP</h2>
             <div style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
                 <div style="flex: 1; padding: 25px; border-radius: 8px; background-color: #f7f9fc; border-left: 5px solid var(--primary-color); min-width: 300px; text-align: left;" data-aos="fade-right">
@@ -761,21 +718,6 @@
     </div>
 
     <script>
-        // --- FUNGSI TOGGLE MENU MOBILE ---
-        document.getElementById('hamburger-btn').addEventListener('click', function() {
-            document.getElementById('nav-links').classList.toggle('active');
-        });
-
-        // Tutup menu jika link diklik (agar setelah navigasi, menu tertutup)
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                // Hanya tutup menu jika layar adalah mobile (opsional, tapi disarankan)
-                if (window.innerWidth <= 768) {
-                    document.getElementById('nav-links').classList.remove('active');
-                }
-            });
-        });
-        
         // --- FUNGSI TAB HARGA ---
         function showPrice(tabId, element) {
             const contents = document.querySelectorAll('.price-content');
