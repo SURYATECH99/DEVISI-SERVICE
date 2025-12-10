@@ -102,9 +102,9 @@
             color: var(--secondary-color);
         }
         
-        /* FIX: Hamburger Menu */
+        /* Hamburger Menu (Sembunyikan di Desktop) */
         .hamburger-menu {
-            display: none; /* Sembunyikan di desktop */
+            display: none; 
             font-size: 1.5em;
             color: white;
             cursor: pointer;
@@ -448,7 +448,6 @@
 
         /* ===================================================================
            RESPONSIVE MOBILE DESIGN (Max 768px)
-           (Bagian ini yang penting untuk mengatasi masalah di screenshot)
         =================================================================== */
         @media (max-width: 768px) {
             
@@ -457,7 +456,8 @@
             .section { padding: 30px 20px; }
             .section h2 { font-size: 1.8em; margin-bottom: 30px; }
             
-            /* Navbar Mobile Fix */
+            /* FIX UTAMA: Navbar Mobile - Gunakan Hamburger */
+            .navbar { padding: 15px 0; }
             .navbar-content { 
                 flex-direction: row; 
                 justify-content: space-between; 
@@ -470,7 +470,7 @@
                 /* Menyembunyikan dan memposisikan menu di mobile */
                 display: none; 
                 position: absolute;
-                top: 65px; /* Sesuaikan dengan tinggi navbar */
+                top: 55px; /* Kurangi tinggi untuk mobile */
                 left: 0;
                 right: 0;
                 background-color: var(--primary-color);
@@ -484,7 +484,7 @@
                 display: flex; /* Tampilkan menu saat aktif */
             }
             .nav-links a { 
-                margin: 10px 0; /* Jarak vertikal */
+                margin: 10px 0; 
                 padding: 10px 0;
                 width: 100%;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -492,9 +492,11 @@
             .nav-links a:last-child {
                 border-bottom: none;
             }
-            
-            /* Header Adjustment */
-            .header-parallax { padding: 80px 0; }
+
+            /* Header Adjustment: Kurangi padding header agar konten cepat terlihat */
+            .header-parallax { 
+                padding: 50px 0; /* Jauh lebih kecil di mobile */
+            }
             .header-content h1 { font-size: 1.8em; }
             .header-content p { font-size: 1em; }
 
