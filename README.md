@@ -102,9 +102,12 @@
             color: var(--secondary-color);
         }
         
-        /* Hamburger Menu disembunyikan di versi ini */
+        /* FIX: Hamburger Menu */
         .hamburger-menu {
-            display: none; 
+            display: none; /* Sembunyikan di desktop */
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
         }
 
         @media (min-width: 769px) {
@@ -445,6 +448,7 @@
 
         /* ===================================================================
            RESPONSIVE MOBILE DESIGN (Max 768px)
+           (Bagian ini yang penting untuk mengatasi masalah di screenshot)
         =================================================================== */
         @media (max-width: 768px) {
             
@@ -453,10 +457,41 @@
             .section { padding: 30px 20px; }
             .section h2 { font-size: 1.8em; margin-bottom: 30px; }
             
-            /* Navbar Mobile Adjustment: Menu akan bertumpuk (desain original sebelum fix) */
-            .navbar-content { flex-direction: column; align-items: flex-start; }
-            .nav-links { margin-top: 10px; flex-wrap: wrap; justify-content: flex-start; }
-            .nav-links a { margin: 5px 10px 5px 0; font-size: 0.9em; }
+            /* Navbar Mobile Fix */
+            .navbar-content { 
+                flex-direction: row; 
+                justify-content: space-between; 
+                align-items: center; 
+            }
+            .hamburger-menu {
+                display: block; /* Tampilkan Hamburger di mobile */
+            }
+            .nav-links { 
+                /* Menyembunyikan dan memposisikan menu di mobile */
+                display: none; 
+                position: absolute;
+                top: 65px; /* Sesuaikan dengan tinggi navbar */
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                text-align: center;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+                padding: 10px 0;
+                z-index: 999;
+            }
+            .nav-links.active {
+                display: flex; /* Tampilkan menu saat aktif */
+            }
+            .nav-links a { 
+                margin: 10px 0; /* Jarak vertikal */
+                padding: 10px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
             
             /* Header Adjustment */
             .header-parallax { padding: 80px 0; }
@@ -538,7 +573,10 @@
                 <i class="fa-solid fa-screwdriver-wrench"></i> <span class="logo-brand">SURYA</span> TEKNISI
             </a>
 
-            <div class="nav-links">
+            <div class="hamburger-menu" id="hamburger-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-links" id="nav-links">
                 <a href="#layanan">Layanan</a>
                 <a href="#harga">Harga</a>
                 <a href="#delivery">Antar Jemput</a>
@@ -721,6 +759,21 @@
     </div>
 
     <script>
+        // --- FUNGSI TOGGLE MENU MOBILE ---
+        document.getElementById('hamburger-btn').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        // Tutup menu jika link diklik (agar setelah navigasi, menu tertutup)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                // Hanya tutup menu jika layar adalah mobile (opsional, tapi disarankan)
+                if (window.innerWidth <= 768) {
+                    document.getElementById('nav-links').classList.remove('active');
+                }
+            });
+        });
+        
         // --- FUNGSI TAB HARGA ---
         function showPrice(tabId, element) {
             const contents = document.querySelectorAll('.price-content');
