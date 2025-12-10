@@ -2,566 +2,646 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surya Teknisi | High-End Performance Repair (Cyber Neon Centered)</title>
+    <title>Surya Teknisi // DARK MODE // Service HP Premium</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* ===================================================================
-           1. VARIABLE & ANIMATIONS
-           =================================================================== */
+        /* ======================================= */
+        /* 1. VARIABLE DEFINITIONS (COLOR & SHADOW)*/
+        /* ======================================= */
         :root {
-            --neon-blue: #00ffff; 
-            --neon-purple: #9d00ff; 
-            --bg-dark: #0d0d1e; 
-            --bg-medium: #1a1a2e;
-            --text-light: #e0f7fa; 
-            --text-secondary: #a0a0c0;
-            --border-opacity: 0.2;
-        }
-        
-        @keyframes neon-pulse {
-            0% { text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-purple); }
-            50% { text-shadow: 0 0 8px var(--neon-blue), 0 0 15px var(--neon-blue); }
-            100% { text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-purple); }
+            /* Palette Futuristik - Dark & Neon */
+            --color-primary: #0077c2; 
+            --color-electric: #00ccff; /* Electric Cyan/Blue Neon */
+            --color-success: #2ecc71;
+            
+            --bg-dark-deep: #0a0a0a; /* Background Hitam Murni */
+            --bg-dark-card: #141414; /* Card lebih terang sedikit */
+            --text-light: #f0f0f0;
+            --text-muted: #888888;
+            
+            /* Neon Glow Shadow */
+            --shadow-neon: 0 0 10px rgba(0, 204, 255, 0.5), 0 0 20px rgba(0, 204, 255, 0.2); 
+            --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
-        @keyframes border-flicker {
-            0%, 100% { border-color: rgba(0, 255, 255, 0.4); }
-            50% { border-color: rgba(157, 0, 255, 0.6); }
-        }
+        /* ======================================= */
+        /* 2. GLOBAL STYLES & ANIMATIONS           */
+        /* ======================================= */
         
-        /* ===================================================================
-           2. GLOBAL STYLES & LAYOUT (CENTERING)
-           =================================================================== */
+        @keyframes neon-glow {
+            0%, 100% { box-shadow: var(--shadow-neon); }
+            50% { box-shadow: 0 0 15px rgba(0, 204, 255, 0.8), 0 0 30px rgba(0, 204, 255, 0.4); }
+        }
+
         body {
-            font-family: 'Inter', sans-serif; 
-            margin: 0; padding: 0; 
-            background-color: var(--bg-dark); 
-            color: var(--text-light); 
-            line-height: 1.6; 
-            scroll-behavior: smooth;
-            background-image: radial-gradient(circle at center, #1b1b36 1px, transparent 0);
-            background-size: 40px 40px;
-            background-attachment: fixed;
-        }
-        
-        /* Kontainer Utama - Memastikan konten di tengah */
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 25px; 
-        }
-        
-        .section { 
-            padding: 100px 0; 
-            position: relative; 
-            text-align: center; 
-        }
-        
-        /* Glass Box Style */
-        .glass-box {
-            background: rgba(26, 26, 46, 0.6);
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 50px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(0, 255, 255, var(--border-opacity));
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 255, 255, 0.3);
-            transition: all 0.5s;
-            text-align: left; 
-            margin: 0 auto 40px auto; 
-        }
-        .glass-box:hover {
-            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2), 0 0 30px rgba(157, 0, 255, 0.5);
-            border: 1px solid rgba(157, 0, 255, 0.4);
-        }
-
-        /* Headings */
-        .section h2 {
-            font-family: 'Teko', sans-serif;
-            font-size: 4.5em; 
-            font-weight: 700; 
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark-deep);
             color: var(--text-light);
-            text-align: center;
-            letter-spacing: 5px; 
-            text-transform: uppercase;
-            animation: neon-pulse 3s ease-in-out infinite alternate;
-            margin-bottom: 10px;
-        }
-        .section p.sub-heading {
-            text-align: center;
-            color: var(--neon-blue);
-            font-size: 1.1em;
-            margin-bottom: 50px;
-            font-weight: 400; 
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+            line-height: 1.7; 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        /* ===================================================================
-           3. NAVBAR (Diupdate: Menghapus menu burger)
-           =================================================================== */
-        .navbar {
-            background: rgba(13, 13, 30, 0.9);
-            backdrop-filter: blur(15px);
-            padding: 18px 0;
-            position: sticky; top: 0; z-index: 1000;
-            border-bottom: 2px solid rgba(0, 255, 255, 0.2);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
         }
-        .navbar-content {
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* ======================================= */
+        /* 3. LAYOUT & NAVIGATION                  */
+        /* ======================================= */
+        
+        /* Navigation Bar - Dark Glass */
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(8px); 
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--color-electric); 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+        }
+        .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 25px;
         }
-        .navbar-logo {
-            font-family: 'Teko', sans-serif; font-size: 2.2em; font-weight: 700; 
-            color: var(--text-light) !important; letter-spacing: 3px; 
-            text-shadow: 0 0 5px var(--neon-blue);
+        .logo { 
+            font-size: 2.2em; 
+            font-weight: 900; 
+            color: var(--color-electric); 
+            text-shadow: var(--shadow-neon); 
         }
-        .navbar-logo .logo-brand { color: var(--neon-blue); }
-        .nav-links a {
-            padding: 8px 15px; 
-            color: var(--text-secondary);
-            font-weight: 500; 
-            transition: all 0.3s ease;
+        .nav-links a { 
+            font-weight: 400; 
+            padding: 10px 15px;
             text-transform: uppercase;
-            border-bottom: 2px solid transparent;
-            text-decoration: none;
+            letter-spacing: 1px;
         }
-        .nav-links a:hover {
-            color: var(--neon-blue);
-            border-bottom: 2px solid var(--neon-blue);
-            text-shadow: 0 0 8px var(--neon-blue);
+        .nav-links a:hover { 
+            color: var(--color-electric);
+            text-shadow: 0 0 5px var(--color-electric);
         }
-        
-        /* ===================================================================
-           4. HEADER & CTA
-           =================================================================== */
-        .header-section {
-            padding: 180px 0 150px 0; 
-            text-align: center; 
+        .cta-nav { 
+            background-color: var(--color-success);
+            color: var(--bg-dark-card) !important;
+            padding: 10px 22px; 
+            border-radius: 5px; 
+            font-weight: 700 !important; 
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+            text-transform: uppercase;
+        }
+        .cta-nav:hover { 
+            background-color: #27ae60;
+            transform: scale(1.05); 
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+        .floating-whatsapp a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            font-size: 2.2em;
+            background-color: var(--color-success); 
+            border-radius: 50%; 
+            animation: neon-glow 3s infinite alternate; 
+            border: 3px solid var(--color-electric);
+            color: var(--bg-dark-deep); /* Ikon WA berwarna gelap */
+        }
+        .floating-whatsapp a:hover {
+            transform: scale(1.1);
+        }
+
+        /* ======================================= */
+        /* 4. SECTIONS & COMPONENTS                */
+        /* ======================================= */
+
+        /* 4.1. Hero Section - Asymmetric */
+        .header-wrap {
+            background: linear-gradient(135deg, var(--bg-dark-deep) 0%, #1a1a1a 100%);
+            padding: 200px 0 150px 0; 
             position: relative;
-            background: var(--bg-dark); 
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            margin-bottom: -100px;
+            border-bottom: 5px solid var(--color-electric);
         }
-        .header-content {
-             position: relative; z-index: 1; 
+        header h1 {
+            font-size: 6em; 
+            font-weight: 900;
+            letter-spacing: -4px; 
+            line-height: 0.95;
+            text-shadow: 0 0 20px rgba(0, 204, 255, 0.6);
+            margin-bottom: 20px;
         }
-        .header-content h1 {
-            font-family: 'Teko', sans-serif; font-size: 6em; 
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.9), 0 0 5px rgba(255, 255, 255, 0.8);
-            color: var(--text-light);
-            animation: neon-pulse 3s ease-in-out infinite;
+        .h1-accent {
+            color: var(--color-electric);
+            font-weight: 200;
         }
-        .header-content p {
-            font-size: 1.4em; 
-            margin: 15px 0 50px 0;
-            color: var(--neon-purple); 
-            font-weight: 600;
+        header p {
+            font-size: 1.8em;
+            font-weight: 300;
+            margin-bottom: 80px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .header-cta-button {
-            padding: 18px 60px; background-color: var(--neon-blue); 
-            color: var(--bg-dark) !important; 
-            box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
-            border: 2px solid var(--neon-blue); border-radius: 4px; 
-            font-size: 1.3em; font-weight: 900; letter-spacing: 1px; 
-            transition: all 0.3s; display: inline-block; text-decoration: none;
+        .cta-button {
+            background-color: var(--color-electric);
+            color: var(--bg-dark-deep);
+            padding: 22px 60px; 
+            border-radius: 5px; 
+            font-size: 1.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 3px solid var(--color-electric);
+            animation: neon-glow 2s infinite alternate;
+            transition: all 0.3s ease-out;
         }
-        .header-cta-button:hover {
-            transform: scale(1.05); background-color: var(--neon-purple);
-            box-shadow: 0 0 15px var(--neon-purple), 0 0 40px var(--neon-purple);
-            border-color: var(--neon-purple);
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--color-electric);
+            transform: scale(1.05);
+            animation: none;
+            box-shadow: 0 0 25px rgba(0, 204, 255, 0.8);
         }
 
-        /* ===================================================================
-           5. GRIDS & CARDS
-           =================================================================== */
-        
-        /* KEUNGGULAN (Grid 3 Kolom) */
-        .keunggulan-grid {
-            display: flex; justify-content: space-between; gap: 30px;
-            max-width: 1000px; 
-            margin: 0 auto; 
-        }
-        .keunggulan-item {
-            flex: 1; text-align: center; padding: 30px; 
-            background: rgba(13, 13, 30, 0.5); backdrop-filter: blur(8px);
-            border: 1px solid rgba(0, 255, 255, 0.1); border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1); transition: all 0.4s;
-            position: relative; overflow: hidden;
-        }
-        .keunggulan-item i { font-size: 3.5em; color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
-        .keunggulan-item h3 { color: var(--text-light); font-family: 'Teko', sans-serif; font-size: 1.8em; margin: 15px 0 10px 0; }
-        .keunggulan-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(157, 0, 255, 0.4); }
-        
-        /* LAYANAN (Grid 3 Kolom) */
-        .layanan-grid {
-            display: flex; justify-content: space-between; gap: 20px;
-            margin-top: 40px;
-        }
-        .layanan-item {
-            flex: 1; text-align: center; padding: 30px 20px;
-            background: rgba(13, 13, 30, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 6px; transition: all 0.3s;
-            cursor: pointer;
-        }
-        .layanan-item:hover { border: 1px solid var(--neon-purple); box-shadow: 0 0 15px rgba(157, 0, 255, 0.5); }
-        .layanan-item i { font-size: 2.5em; color: var(--neon-purple); text-shadow: 0 0 8px var(--neon-purple); margin-bottom: 10px; }
-        
-        /* PROSES (Flow Diagram) */
-        .process-flow { 
-            position: relative; display: flex; justify-content: space-between; 
-            padding-top: 50px; 
-            max-width: 1000px; 
-            margin: 0 auto; 
-        }
-        .process-flow::before { 
-            content: ''; position: absolute; top: 75px; left: 15%; right: 15%; height: 2px; 
-            background: var(--neon-purple); z-index: 1;
-        }
-        .step { position: relative; width: 22%; text-align: center; z-index: 2; }
-        .step-icon { 
-            width: 70px; height: 70px; border-radius: 50%;
-            background-color: var(--bg-dark); border: 4px solid var(--neon-blue);
-            display: flex; justify-content: center; align-items: center;
-            margin: 0 auto 15px auto; transition: all 0.3s;
-            box-shadow: 0 0 10px var(--neon-blue);
-            animation: border-flicker 4s linear infinite alternate;
-        }
-        .step h4 { color: var(--neon-blue); font-family: 'Teko', sans-serif; font-weight: 700; letter-spacing: 1px; text-shadow: 0 0 5px var(--neon-blue); }
-
-        /* TESTIMONIALS (Grid 3 Kolom) */
-        .testimonial-grid {
-            display: flex; justify-content: space-between; gap: 20px;
-            margin-top: 40px;
-        }
-        .testimonial-card {
-            flex: 1; padding: 25px; border-radius: 6px; 
-            background: rgba(13, 13, 30, 0.7); 
+        /* 4.2. Main Section Styling */
+        .section {
+            background-color: var(--bg-dark-card);
+            padding: 60px;
+            margin: 120px 0; 
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft); 
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+        .section h2 {
+            font-size: 3.2em;
+            font-weight: 200; 
+            color: var(--text-light);
+            margin-bottom: 50px;
+            letter-spacing: 2px;
             text-align: center;
         }
+        .section h2 strong {
+            font-weight: 800;
+            color: var(--color-electric);
+        }
+
+        /* 4.3. Warranty Box - Inverted Neon */
+        .warranty-box {
+            background: var(--color-electric);
+            color: var(--bg-dark-deep);
+            padding: 50px; 
+            border-radius: 5px;
+            margin: 150px auto 100px auto;
+            border: 5px solid var(--bg-dark-deep);
+            box-shadow: var(--shadow-neon);
+            max-width: 800px;
+            text-align: center;
+            transform: rotateZ(-0.5deg);
+        }
+        .warranty-box h3 {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 2.8em; 
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--bg-dark-deep);
+        }
+        .warranty-box p {
+            color: var(--bg-dark-deep); 
+            font-weight: 500;
+        }
+        .warranty-box .guarantee-icon {
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+
+        /* 4.4. Layanan Cards */
+        .layanan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .layanan-card {
+            padding: 40px;
+            border-radius: 15px;
+            background: var(--bg-dark-card);
+            border: 1px solid var(--color-electric);
+            box-shadow: 0 0 5px rgba(0, 204, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+        .layanan-card:hover {
+            transform: scale(1.03); 
+            background: var(--bg-dark-deep);
+            box-shadow: var(--shadow-neon);
+            border-color: var(--color-success);
+        }
+        .layanan-icon {
+            font-size: 4em; 
+            color: var(--color-electric);
+            background-color: transparent; 
+            padding: 10px; 
+            border-radius: 50%;
+            margin-bottom: 25px;
+        }
+        .layanan-card h3 {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--color-electric);
+            text-transform: uppercase;
+        }
+
+        /* 4.5. Process Flow */
+        .process-flow {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .process-flow::before {
+            content: '';
+            position: absolute;
+            top: 50px; 
+            left: 0;
+            right: 0;
+            margin: 0 15%;
+            height: 4px; 
+            background: var(--color-electric); 
+            z-index: 1;
+        }
+        .step {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+            padding: 0 10px;
+        }
+        .step-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px auto;
+            font-size: 2em;
+            background-color: var(--bg-dark-card);
+            color: var(--color-electric);
+            border: 4px solid var(--color-electric);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        .step:hover .step-icon {
+            background-color: var(--color-electric);
+            color: var(--bg-dark-deep);
+            box-shadow: 0 0 15px var(--color-electric);
+        }
+        .step h4 {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        /* 4.6. Final CTA Section */
+        .final-cta-wrap {
+            position: relative;
+            background-color: var(--bg-dark-card);
+            color: var(--text-light);
+            padding: 120px 0;
+            margin-top: 100px;
+            text-align: center;
+            border-top: 5px solid var(--color-success);
+        }
+        .final-cta-wrap h2 {
+            font-size: 3.5em;
+            font-weight: 200;
+            color: var(--color-electric);
+            margin-bottom: 15px;
+        }
+        .final-cta-wrap h2 strong {
+            font-weight: 900;
+            color: var(--color-success);
+        }
+        .final-cta-wrap p {
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+        .final-cta-wrap .cta-button {
+            /* Override CTA Main Button Animation */
+            background-color: var(--color-success); 
+            color: var(--bg-dark-deep); 
+            border-color: var(--color-success); 
+            animation: none; 
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.7);
+        }
+        .final-cta-wrap .cta-button:hover {
+            color: var(--color-success);
+            background-color: transparent;
+            box-shadow: 0 0 25px rgba(46, 204, 113, 1);
+        }
         
-        /* ===================================================================
-           6. PRICING TABLE & TABS
-           =================================================================== */
-        .price-tabs-container {
-            display: flex; justify-content: center; margin-bottom: 30px;
-        }
-        .price-tab-button {
-            padding: 10px 20px; margin: 0 5px; cursor: pointer;
-            border: 1px solid var(--neon-blue); 
-            background: rgba(13, 13, 30, 0.7);
-            color: var(--neon-blue);
-            transition: all 0.3s; border-radius: 4px;
-            font-weight: 600; text-transform: uppercase;
-        }
-        .price-tab-button:hover, .price-tab-button.active {
-            background-color: var(--neon-blue);
-            color: var(--bg-dark);
-            box-shadow: 0 0 10px var(--neon-blue);
-        }
-        .price-content { display: none; margin-top: 20px; }
-        .price-content.active { display: block; }
-
-        table { width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 800px; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        th { background-color: var(--neon-purple); color: var(--text-light); text-align: center; font-size: 1.2em; font-family: 'Teko', sans-serif; }
-        td:nth-child(2) { text-align: right; }
-        .price-highlight { color: var(--neon-blue); text-shadow: 0 0 5px rgba(0, 255, 255, 0.3); font-weight: 700; }
-
-        /* ===================================================================
-           7. DELIVERY PROMO
-           =================================================================== */
-        .delivery-promo {
-            padding: 40px; border-radius: 8px; text-align: center;
-            background: var(--neon-purple); color: var(--text-light); 
-            box-shadow: 0 8px 25px rgba(157, 0, 255, 0.5);
-            border: 3px solid var(--neon-purple);
-            margin: 0 auto 50px auto; 
-            max-width: 1000px;
-        }
-        .delivery-promo h3 { font-size: 2em; margin-bottom: 10px; text-shadow: 0 0 5px var(--bg-dark); }
-        .delivery-promo a {
-            padding: 15px 40px; background-color: var(--neon-blue); 
-            color: var(--bg-dark) !important; font-weight: 900;
-            transition: all 0.3s; display: inline-block; text-decoration: none; border-radius: 4px;
-        }
-
-        /* ===================================================================
-           8. FOOTER & FAB
-           =================================================================== */
+        /* 4.7. Footer */
         footer {
-            background-color: var(--bg-dark); padding: 40px 0; 
-            border-top: 5px solid; 
-            border-image: linear-gradient(to right, var(--neon-blue), var(--neon-purple)) 1;
-            border-image-slice: 1;
+            background-color: var(--bg-dark-deep);
+            color: var(--text-muted);
+            padding: 80px 0 50px 0; 
+            border-top: 2px solid var(--text-muted);
         }
-        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; text-align: left; }
-        .footer-left { max-width: 40%; }
-        .footer-right { max-width: 40%; text-align: right; }
-        .footer-left h4 { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); }
-        .contact-info a { color: var(--text-light); text-decoration: none; display: flex; align-items: center; justify-content: flex-end; margin-bottom: 8px; }
-        .contact-info a i { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); margin-right: 10px; }
-
-        .fab-container { position: fixed; bottom: 30px; right: 30px; z-index: 1001; }
-        .fab { 
-            display: flex; justify-content: center; align-items: center;
-            width: 60px; height: 60px; border-radius: 50%; 
-            background-color: #25D366; color: white; font-size: 2em;
-            box-shadow: 0 0 15px #25D366; transition: all 0.3s;
-            text-decoration: none;
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
         }
-        .fab:hover { box-shadow: 0 0 25px #25D366, 0 0 5px white; }
+        .footer-col {
+            width: 20%; 
+            min-width: 200px;
+        }
+        .footer-col h4 {
+            color: var(--color-electric);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        .footer-col ul li a:hover {
+            color: var(--color-electric);
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            background-color: transparent; 
+            border: 1px solid var(--color-electric); 
+            border-radius: 4px;
+            color: var(--color-electric);
+        }
+        .social-links a:hover {
+            background-color: var(--color-electric);
+            color: var(--bg-dark-deep);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #4b4b4b;
+            font-size: 0.9em;
+        }
+        .footer-note {
+            color: #333333;
+            margin-top: 5px;
+        }
 
-        /* ===================================================================
-           9. MOBILE RESPONSIVE (Menyembunyikan Tautan Navigasi di Mobile)
-           =================================================================== */
-        @media (max-width: 768px) {
-            .navbar-content { padding: 0 15px; }
-            .header-content h1 { font-size: 3.5em; }
+        /* ======================================= */
+        /* 5. MEDIA QUERIES (RESPONSIVENESS)       */
+        /* ======================================= */
+        
+        @media (max-width: 1000px) {
+            .footer-col {
+                width: 45%;
+                min-width: 150px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            /* Header */
+            header h1 { font-size: 4em; letter-spacing: -2px; }
+            header p { font-size: 1.2em; }
+            .header-wrap { clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%); padding: 100px 0 80px 0; }
             
-            /* Sembunyikan Nav Links di Mobile agar hanya logo yang tampil */
-            .nav-links { display: none; }
-            
-            .keunggulan-grid, .layanan-grid, .testimonial-grid { flex-direction: column; gap: 15px; }
-            .process-flow { flex-wrap: wrap; padding-top: 20px; }
-            .process-flow::before { display: none; } 
-            .step { width: 45%; margin-bottom: 30px; }
-            .footer-content { flex-direction: column; align-items: center; text-align: center; }
-            .footer-left, .footer-right { max-width: 100%; text-align: center; }
-            .contact-info a { justify-content: center; }
-            .contact-info a i { margin-right: 5px; }
+            /* Sections */
+            .section { padding: 30px; margin: 80px 0; }
+            .section h2 { font-size: 2.5em; }
+            .warranty-box { transform: none; margin: 80px auto; padding: 30px; }
+            .warranty-box h3 { font-size: 2em; }
+
+            /* Layouts */
+            .layanan-grid { gap: 20px; }
+            .process-flow { flex-direction: column; }
+            .process-flow::before { display: none; }
+            .step { margin-bottom: 20px; }
+
+            /* Footer */
+            .footer-content { justify-content: center; }
+            .footer-col { width: 100%; text-align: center; min-width: unset; }
         }
     </style>
 </head>
 <body>
+    
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/6285198331549" target="_blank" aria-label="Hubungi via WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 900, once: true, disable: 'phone' });
-    </script>
-
-    <div class="navbar">
-        <div class="navbar-content">
-            <a href="#" class="navbar-logo">
-                <i class="fa-solid fa-bolt logo-brand"></i> SURYA TEKNISI
-            </a>
-
-            <div class="nav-links" id="nav-links">
-                <a href="#layanan">PERBAIKAN</a>
-                <a href="#keunggulan">KEUNGGULAN</a>
-                <a href="#harga">HARGA</a>
-                <a href="#proses">PROSES</a>
-                <a href="#testimoni">TESTIMONI</a>
-                <a href="#kontak">KONTAK</a>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">// SURYA TEKNISI</a>
+            <div class="nav-links">
+                <a href="#layanan">Layanan</a>
+                <a href="#proses">Proses</a>
+                <a href="#testimoni">Testimoni</a>
+                <a href="tel:085198331549" class="cta-nav"><i class="fas fa-phone"></i> KONSULTASI GRATIS</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="header-section">
-        <div class="header-content" data-aos="fade-down">
-            <h1>PRECISE REPAIR. PERFORMANCE REBORN.</h1>
-            <p>Spesialis Mikrosoldering dan Optimalisasi Performa HP Bergaransi 1 Tahun.</p>
-            <a href="https://wa.me/6285198331549?text=Saya%20ingin%20reservasi%20service%20performance%20cyber%20neon.%20Mohon%20infokan%20tipe%20HP%20saya%20dan%20kerusakan." class="header-cta-button" target="_blank">
-                <i class="fa-solid fa-screwdriver-wrench"></i> RESERVASI SERVICE
-            </a>
+    <header class="header-wrap">
+        <div class="container">
+            <h1><span class="h1-accent">SERVICE HP TINGKAT CHIP</span> <br>GARANSI 90 HARI</h1>
+            <p>GRATIS ANTAR JEMPUT // AREA SURABAYA</p>
+            <a href="https://wa.me/6285198331549" target="_blank" class="cta-button"><i class="fab fa-whatsapp"></i> JADWALKAN PENJEMPUTAN</a>
         </div>
-    </div>
+    </header>
 
     <div class="container">
         
-        <section id="keunggulan" class="section">
-            <h2>KEUNGGULAN UTAMA</h2>
-            <p class="sub-heading">Apa yang membuat kami berbeda.</p>
-            <div class="keunggulan-grid">
-                <div class="keunggulan-item" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fa-solid fa-trophy"></i>
-                    <h3>GARANSI TERBAIK</h3>
-                    <p>Jaminan Performa 1 TAHUN untuk Semua Perbaikan Mainboard.</p>
-                </div>
-                <div class="keunggulan-item" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fa-solid fa-rocket"></i>
-                    <h3>KECEPATAN MAXIMUM</h3>
-                    <p>Diagnosa Kilat dan Eksekusi Pengerjaan yang Efisien.</p>
-                </div>
-                <div class="keunggulan-item" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fa-solid fa-microchip"></i>
-                    <h3>TEKNISI ELITE</h3>
-                    <p>Ditangani Ahli Mikrosoldering dengan Peralatan Canggih.</p>
-                </div>
-            </div>
+        <section class="warranty-box">
+            <h3>
+                <span class="guarantee-icon"><i class="fas fa-shield-alt"></i></span> 
+                JAMINAN RESMI GARANSI 90 HARI
+            </h3>
+            <p>Kualitas Premium, Suku Cadang Terjamin. Ketenangan Anda Prioritas Kami.</p>
         </section>
 
-
-        <section id="layanan" class="section">
-            <div class="glass-box">
-                <h2>CORE SERVICES. HIGH PRECISION REPAIR.</h2>
-                <p class="sub-heading">Keahlian kami untuk mempertahankan keunggulan perangkat Anda.</p>
+        <section class="section" id="layanan">
+            <h2>Layanan <strong>Utama</strong> Kami</h2>
+            <div class="layanan-grid">
                 
-                <div class="layanan-grid">
-                    <div class="layanan-item" onclick="openWhatsApp('layar')" data-aos="fade-right"><i class="fa-solid fa-mobile-screen"></i><h3>LCD & Display Gaming</h3><p>Mengatasi *Touch Lag*, Layar Rusak, dan Masalah *Refresh Rate*.</p></div>
-                    <div class="layanan-item" onclick="openWhatsApp('mainboard')" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-power-off"></i><h3>Mainboard & Power IC</h3><p>Solusi HP Mati Total, *Restart*, dan *Overheating* karena IC Power.</p></div>
-                    <div class="layanan-item" onclick="openWhatsApp('baterai')" data-aos="fade-left" data-aos-delay="200"><i class="fa-solid fa-battery-full"></i><h3>Optimasi Baterai & Daya</h3><p>Penggantian Baterai Kualitas Terbaik dan Perbaikan Jalur Fast Charging.</p></div>
+                <div class="layanan-card">
+                    <div class="layanan-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>GANTI LAYAR/LCD</h3>
+                    <p>Penggantian layar dengan part yang menjamin kualitas visual dan sentuhan.</p>
                 </div>
 
+                <div class="layanan-card">
+                    <div class="layanan-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>SERVIS MAINBOARD</h3>
+                    <p>Perbaikan kerusakan tingkat lanjut (mati total, short) oleh teknisi bersertifikasi.</p>
+                </div>
+
+                <div class="layanan-card">
+                    <div class="layanan-icon"><i class="fas fa-battery-full"></i></div>
+                    <h3>BATERAI & CHARGING</h3>
+                    <p>Solusi daya tahan baterai dan masalah konektor charging yang cepat dan akurat.</p>
+                </div>
+
+                <div class="layanan-card">
+                    <div class="layanan-icon" style="color: var(--color-success);"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>FREE PICKUP & DELIVERY</h3>
+                    <p>Layanan eksklusif Surabaya: Kami ambil, perbaiki, dan antar kembali HP Anda, gratis.</p>
+                </div>
             </div>
         </section>
 
-    </div> 
-
-    <section id="proses" class="section" style="background-color: var(--bg-medium);">
-        <div class="container">
-            <h2>4-STEP PROTOCOL</h2>
-            <p class="sub-heading">Proses Kerja Cepat, Akurat, dan Transparan.</p>
+        <section class="section" id="proses">
+            <h2>Alur Kerja <strong>Terstruktur</strong></h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px; font-weight: 400;">Setiap tahap dilakukan secara transparan dan profesional.</p>
             
             <div class="process-flow">
-                <div class="step" data-aos="zoom-in" data-aos-delay="100"><div class="step-icon"><i class="fa-solid fa-clock-rotate-left"></i></div><h4>1. RESERVASI SLOT</h4><p>Penjadwalan *service* (Cepat, bahkan *On-The-Spot*).</p></div>
-                <div class="step" data-aos="zoom-in" data-aos-delay="250"><div class="step-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h4>2. DIAGNOSA TEKNIS</h4><p>Pengecekan mendalam dan laporan biaya ke Anda.</p></div>
-                <div class="step" data-aos="zoom-in" data-aos-delay="400"><div class="step-icon"><i class="fa-solid fa-gears"></i></div><h4>3. EKSEKUSI REPAIR</h4><p>Perbaikan presisi dan pengujian performa intensif (QC).</p></div>
-                <div class="step" data-aos="zoom-in" data-aos-delay="550"><div class="step-icon"><i class="fa-solid fa-handshake"></i></div><h4>4. REDEPLOYMENT</h4><p>Pengembalian unit siap tempur ke tangan Anda.</p></div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-handshake"></i></div>
+                    <h4>1. BOOKING</h4>
+                    <p>Jadwalkan penjemputan via WA.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-search-plus"></i></div>
+                    <h4>2. DIAGNOSA</h4>
+                    <p>Pengujian mendalam di workshop.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                    <h4>3. PERBAIKAN</h4>
+                    <p>Proses perbaikan dan kontrol kualitas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                    <h4>4. SELESAI</h4>
+                    <p>HP diantar kembali, garansi aktif!</p>
+                </div>
             </div>
+        </section>
+
+        <section class="section" id="testimoni" style="text-align: center;">
+            <h2>Apa Kata <strong>Pelanggan</strong> Kami</h2>
+            <div style="color: var(--text-muted);">
+                <p>*(Placeholder untuk Testimoni Carousel yang akan diintegrasikan dengan JavaScript)*</p>
+                <div style="font-size: 3em; margin-top: 30px; color: var(--color-electric);"><i class="fas fa-quote-left"></i></div>
+            </div>
+        </section>
+    </div>
+        
+    <section class="final-cta-wrap">
+        <div class="container">
+            <h2>HP Anda Siap Kembali <strong>Sempurna</strong>?</h2>
+            <p style="font-size: 1.2em;">Jadwalkan penjemputan gratis sekarang untuk layanan service premium bergaransi.</p>
+            <a href="https://wa.me/6285198331549" target="_blank" class="cta-button final-cta-button"><i class="fab fa-whatsapp"></i> CHAT DAN MULAI SERVICE</a>
         </div>
     </section>
 
-    <div class="container">
-
-        <section id="harga" class="section">
-            <div class="glass-box">
-                 <h2>PRICING MATRIX. TRANSPARENT VALUE.</h2>
-                <p class="sub-heading">Daftar harga untuk service kualitas terbaik.</p>
-
-                <div class="price-tabs-container" data-aos="fade-in">
-                    <button class="price-tab-button active" onclick="showPrice('iphone', this)">IPHONE</button>
-                    <button class="price-tab-button" onclick="showPrice('android', this)">ANDROID GAMING</button>
-                    <button class="price-tab-button" onclick="showPrice('ic', this)">MICRO-SOLDERING</button>
-                </div>
-
-                <div id="iphone" class="price-content active" data-aos="fade-up">
-                    <table><thead><tr><th colspan="2">APPLE IPHONE (Display & Power)</th></tr></thead>
-                        <tbody>
-                            <tr><td>Ganti LCD iPhone 15 Pro Max</td><td class="price-highlight">Mulai Rp 1.100.000</td></tr>
-                            <tr><td>Ganti LCD iPhone 13 Pro</td><td class="price-highlight">Mulai Rp 550.000</td></tr>
-                            <tr><td>Perbaikan Face ID</td><td class="price-highlight">Mulai Rp 800.000</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="android" class="price-content" data-aos="fade-up">
-                    <table><thead><tr><th colspan="2">ANDROID PREMIUM (Samsung, ROG, Black Shark)</th></tr></thead>
-                    <tbody>
-                        <tr><td>Ganti LCD Samsung S23 Ultra</td><td class="price-highlight">Mulai Rp 2.000.000</td></tr>
-                        <tr><td>Ganti LCD Samsung S21 Ultra</td><td class="price-highlight">Mulai Rp 1.500.000</td></tr>
-                        <tr><td>Ganti Baterai Xiaomi 12 Pro</td><td class="price-highlight">Mulai Rp 200.000</td></tr>
-                    </tbody>
-                    </table>
-                </div>
-                <div id="ic" class="price-content" data-aos="fade-up">
-                    <table><thead><tr><th colspan="2">PERBAIKAN MAINBOARD & FUNGSI (IC)</th></tr></thead>
-                    <tbody>
-                        <tr><td>Perbaikan IC Power (HP Mati Total)</td><td class="price-highlight">Mulai Rp 600.000</td></tr>
-                        <tr><td>Perbaikan Jalur Charging/Port</td><td class="price-highlight">Mulai Rp 350.000</td></tr>
-                        <tr><td>Perbaikan Kerusakan Cairan</td><td class="price-highlight">KONSULTASI</td></tr>
-                    </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="testimoni" class="section">
-            <div class="glass-box">
-                <h2>CLIENT FEEDBACK. TRUSTED BY PROS.</h2>
-                <p class="sub-heading">Kami membuat *gamer* dan *power user* puas dengan performa.</p>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
                 
-                <div class="testimonial-grid">
-                    <div class="testimonial-card" data-aos="fade-right" data-aos-delay="100"><i class="fa-solid fa-thumbs-up"></i><p>"Perbaikan IC Power di sini cepat dan hasilnya HP saya tidak lagi *restart* saat bermain game berat. Garansi 1 tahunnya mantap!"</p><h4>- Zaki (Competitive Gamer)</h4></div>
-                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-thumbs-up"></i><p>"Layanan jemputnya sesuai janji. Kualitas LCD yang dipasang Ori, *refresh rate* tetap smooth. Recommended!"</p><h4>- Mega (Streamer Mobile)</h4></div>
-                    <div class="testimonial-card" data-aos="fade-left" data-aos-delay="300"><i class="fa-solid fa-thumbs-up"></i><p>"Profesional dan sangat mengerti HP high-end. Masalah baterai boros teratasi total. *Full bar*!"</p><h4>- Raga (Tech Enthusiast)</h4></div>
+                <div class="footer-col">
+                    <h4>KONTAK // LOKASI</h4>
+                    <p>Alamat Workshop: <br>Surabaya (Detail alamat via WA)</p>
+                    <p>Telepon: <a href="tel:085198331549">0851 9833 1549</a></p>
+                    <p>Email: <a href="mailto:info@suryateknisi.com">info@suryateknisi.com</a></p>
                 </div>
-            </div>
-        </section>
-
-        <section class="section" style="padding: 0;">
-             <div id="delivery" class="delivery-promo" data-aos="zoom-in">
-                <h3><i class="fa-solid fa-car-side"></i> SERVICE ANTAR JEMPUT INSTAN GRATIS!</h3>
-                <p>Kami jemput HP Anda di Surabaya. Fokus pada performa, biarkan kami urus logistiknya.</p>
-                <a href="https://wa.me/6285198331549?text=Saya%20ingin%20memanfaatkan%20layanan%20antar%20jemput%20gratis%20untuk%20service%20HP%20di%20Surabaya." 
-                   target="_blank">
-                   JADWALKAN PICKUP SEKARANG
-                </a>
-            </div>
-        </section>
-
-    </div> 
-    
-    <footer id="kontak">
-        <div class="container footer-content">
-            <div class="footer-left">
-                <h4><i class="fa-solid fa-bolt"></i> SURYA TEKNISI REPAIR</h4>
-                <p>Spesialis Mikrosoldering dan Perbaikan Performa HP Gaming di Surabaya. Dapatkan garansi 1 tahun untuk setiap service IC.</p>
-                <p style="margin-top: 10px;">© 2025 Surya Teknisi</p>
-            </div>
-            <div class="footer-right">
-                <h5>HUBUNGI KAMI SEKARANG</h5>
-                <div class="contact-info">
-                    <a href="https://wa.me/6285198331549" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp (Fast Response)
-                    </a>
-                    <a href="tel:085198331549">
-                        <i class="fa-solid fa-phone"></i> Telepon: 0851 9833 1549
-                    </a>
-                    <a href="https://maps.app.goo.gl/YourLocation" target="_blank">
-                        <i class="fa-solid fa-location-dot"></i> Lokasi Toko (Surabaya)
-                    </a>
+                
+                <div class="footer-col">
+                    <h4>TAUTAN // CEPAT</h4>
+                    <ul>
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#proses">Proses Kerja</a></li>
+                        <li><a href="#testimoni">Testimoni</a></li>
+                    </ul>
                 </div>
+
+                <div class="footer-col">
+                    <h4>IKUTI // KAMI</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/6285198331549" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>JAMINAN // KAMI</h4>
+                    <ul>
+                        <li><a href="#">Teknisi Bersertifikasi</a></li>
+                        <li><a href="#">Suku Cadang Premium</a></li>
+                        <li><a href="#">Garansi Ulang Hingga 90 Hari</a></li>
+                        <li><a href="#">Harga Transparan</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>SURYA TEKNISI &copy; 2025 // ALL RIGHTS RESERVED.</p>
+                <p class="footer-note">GRATIS ANTAR JEMPUT HANYA BERLAKU UNTUK AREA KOTA SURABAYA.</p>
             </div>
         </div>
     </footer>
 
-    <div class="fab-container">
-        <a href="https://wa.me/6285198331549" target="_blank" class="fab"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
-
-    <script>
-        // FUNGSI TOGGLE MENU MOBILE (Dihapus karena tombol burger dihapus)
-        // Namun, menjaga fungsi untuk tab harga dan WhatsApp
-        
-        // FUNGSI TAB HARGA
-        function showPrice(tabId, element) {
-            const contents = document.querySelectorAll('.price-content');
-            contents.forEach(content => content.classList.remove('active'));
-            const buttons = document.querySelectorAll('.price-tab-button');
-            buttons.forEach(button => button.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active');
-            if (element) element.classList.add('active');
-        }
-
-        // FUNGSI OPEN WHATSAPP DENGAN PESAN OTOMATIS
-        const serviceMap = {
-            layar: "Halo, saya ingin reservasi Service Layar/Display Gaming. Tolong infokan tipe HP saya: ",
-            mainboard: "Halo, saya ingin reservasi Perbaikan Mainboard/IC Power. Tolong infokan tipe HP saya: ",
-            baterai: "Halo, saya ingin reservasi Optimasi Baterai & Daya. Tolong infokan tipe HP saya: "
-        };
-
-        function openWhatsApp(serviceId) {
-            const waNumber = '6285198331549'; 
-            const message = encodeURIComponent(serviceMap[serviceId]);
-            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
-        }
-
-        // Inisialisasi: Aktifkan tab iPhone saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', () => {
-            const iphoneButton = document.querySelector('.price-tab-button[onclick*="iphone"]');
-            if(iphoneButton) showPrice('iphone', iphoneButton);
-        });
-    </script>
 </body>
 </html>
