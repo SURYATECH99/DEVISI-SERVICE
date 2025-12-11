@@ -435,7 +435,7 @@
     })();
 
     // ---------------------
-    // Booking -> WhatsApp
+    // konsultasi -> WhatsApp
     // ---------------------
     function submitBooking(e){
       e.preventDefault();
