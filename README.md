@@ -1,753 +1,328 @@
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surya Teknisi Premium | Spesialis Service HP Surabaya Garansi 90 Hari</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        /* ===================================================================
-           1. CORE & GLOBAL STYLES 
-        =================================================================== */
-        :root {
-            --primary-color: #004a99; 
-            --secondary-color: #ffb700; 
-            --danger-color: #c72c41; 
-            --success-color: #208e43;
-            --text-color: #212529; 
-            --bg-light: #f0f0f0; 
-            --bg-white: #ffffff;
-            --shadow-subtle: 0 8px 25px rgba(0, 0, 0, 0.08);
-            --shadow-lift: 0 15px 35px rgba(0, 0, 0, 0.15); 
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Surya Teknisi Premium — Service HP Surabaya | Garansi 90 Hari</title>
+  <meta name="description" content="Surya Teknisi — Jasa service HP profesional Surabaya. Spesialis mikrosoldering, ganti LCD, baterai, dan antar jemput gratis. Garansi hingga 90 hari.">
+  <meta name="keywords" content="service hp surabaya, teknisi hp, mikrosoldering, ganti lcd, antar jemput gratis">
 
-        body {
-            font-family: 'Poppins', Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: var(--bg-light); 
-            color: var(--text-color); 
-            line-height: 1.6; 
-            scroll-behavior: smooth;
-        }
-        .container {max-width: 1100px; margin: 40px auto; padding: 0 25px;}
-        .section {
-            background-color: var(--bg-white); 
-            padding: 60px; 
-            margin-bottom: 40px; 
-            border-radius: 20px; 
-            box-shadow: var(--shadow-subtle); 
-        }
-        .section h2 {
-            color: var(--primary-color); 
-            border-bottom: 3px solid var(--secondary-color); 
-            padding-bottom: 12px; 
-            margin-bottom: 50px; 
-            font-size: 2.2em; 
-            font-weight: 700; 
-            text-align: center;
-        }
-        
-        /* 2. NAVBAR */
-        .navbar {
-            background-color: var(--primary-color); 
-            padding: 18px 0;
-            position: sticky; top: 0; z-index: 1000;
-        }
-        .navbar-content {
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 0 25px;
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-        }
-        .nav-links {
-            display: flex;
-            justify-content: center; 
-            flex-grow: 1; 
-        }
-        .nav-links a {
-            color: white; 
-            text-decoration: none; 
-            font-weight: 600; 
-            margin: 0 15px; 
-            padding-bottom: 5px;
-            position: relative;
-            transition: color 0.3s;
-        }
-        
-        /* Styling Logo Teks (Pengganti Gambar) */
-        .navbar-logo {
-            font-size: 1.6em;
-            font-weight: 800; 
-            color: white !important;
-            text-decoration: none; 
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 8px; 
-        }
-        .navbar-logo .logo-brand {
-            color: var(--secondary-color); 
-        }
-        .navbar-logo i {
-            font-size: 1.2em;
-            color: var(--secondary-color);
-        }
-        
-        @media (min-width: 769px) {
-             .navbar-content {
-                justify-content: center; 
-                flex-direction: column;
-                gap: 10px;
-            }
-            .navbar-logo {
-                margin-bottom: 5px; 
-            }
-        }
-        @media (max-width: 768px) {
-            .navbar-content {
-                flex-direction: column;
-            }
-            .nav-links {
-                margin-top: 10px;
-            }
-        }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Surya Teknisi Premium — Service HP Surabaya">
+  <meta property="og:description" content="Spesialis diagnosa mainboard & perbaikan premium. Garansi hingga 90 hari. Antar jemput gratis Surabaya.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Surya+Teknisi+Premium">
 
-        /* HEADER */
-        .header-parallax {
-            background: linear-gradient(135deg, rgba(0, 74, 153, 0.95) 0%, rgba(0, 100, 200, 0.95) 100%), url('https://via.placeholder.com/1600x600?text=Modern+HP+Repair+Background'); 
-            color: #ffffff; 
-            padding: 140px 0; 
-            background-attachment: fixed;
-            text-align: center; 
-        }
-        .header-content {
-            max-width: 800px; 
-            margin: 0 auto; 
-        }
-        .header-content h1 {
-            margin-top: 0; 
-        }
+  <!-- Schema: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Surya Teknisi",
+    "image": "https://via.placeholder.com/1200x630?text=Surya+Teknisi+Premium",
+    "@id": "https://example.com/",
+    "url": "https://example.com/",
+    "telephone": "+6285198331549",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Surabaya",
+      "addressRegion": "Jawa Timur",
+      "addressCountry": "ID"
+    },
+    "priceRange": "Rp",
+    "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00"
+  }
+  </script>
 
-        /* WARANTY BOX */
-        .warranty-box {
-            padding: 20px 40px;
-            margin-bottom: 40px;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(255, 183, 0, 0.3);
-        }
-        .warranty-box h3 {
-            margin: 0 0 5px 0;
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 1.5em;
-        }
-        .warranty-box p {
-            margin: 0;
-            font-size: 1.1em;
-        }
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --primary:#0b61b7; --accent:#ffb000; --muted:#667085; --success:#1fa73a; --danger:#c91f3a; --glass: rgba(255,255,255,0.6);
+      --maxw:1100px; --radius:14px; --shadow: 0 8px 30px rgba(7,18,38,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:'Poppins',system-ui,Arial; background:var(--bg); color:#0b2a3a; -webkit-font-smoothing:antialiased}
+    a{color:inherit}
 
-        /* LAYANAN GRID DAN ANIMASI */
-        .layanan-grid {
-             display: grid; 
-             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-             gap: 25px; 
-        }
-        .layanan-item {
-            border: 1px solid #e9ecef; 
-            background-color: #fcfcfc;
-            border-radius: 15px;
-            min-height: 260px; 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 30px 20px; 
-            transition: all 0.3s;
-            text-align: center; 
-            cursor: pointer; 
-        }
-        .layanan-item:hover {
-            box-shadow: var(--shadow-lift); 
-            transform: translateY(-5px); 
-            background-color: var(--primary-color); 
-        }
-        .layanan-item:hover h3, 
-        .layanan-item:hover p {
-            color: white; 
-        }
-        .layanan-item i {
-            font-size: 3.5em; 
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            transition: color 0.3s;
-        }
-        .layanan-item:hover i {
-            color: var(--secondary-color); 
-        }
-        
-        /* Styling Tombol CTA Besar di Bawah Layanan */
-        .layanan-cta-button {
-            display: block;
-            width: fit-content;
-            margin: 40px auto 0 auto; 
-            padding: 18px 50px;
-            background-color: var(--success-color); 
-            color: white !important;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.3em; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 20px rgba(32, 142, 67, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
-        }
+    .container{max-width:var(--maxw); margin:28px auto; padding:0 18px}
 
-        .layanan-cta-button:hover {
-            background-color: #179c3f; 
-            transform: scale(1.05); 
-        }
-        
-        /* ===================================================================
-           PRICE SECTION STYLING
-        =================================================================== */
-        .price-tabs-container { 
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .price-tab-button {
-            padding: 10px 25px;
-            margin: 0 5px 15px 5px;
-            border: 2px solid var(--primary-color); 
-            border-radius: 50px;
-            background-color: var(--bg-white); 
-            color: var(--primary-color); 
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1em;
-            text-transform: uppercase;
-            outline: none; 
-        }
+    /* NAVBAR */
+    .navbar{position:sticky; top:0; z-index:50; backdrop-filter: blur(6px); background: linear-gradient(90deg, rgba(11,97,183,0.96), rgba(3,64,130,0.96)); color:#fff; box-shadow:var(--shadow)}
+    .nav-inner{max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:16px; padding:12px 18px}
+    .brand{display:flex; gap:10px; align-items:center; text-decoration:none}
+    .brand .logo{width:44px;height:44px;border-radius:10px;background:var(--accent); display:grid; place-items:center; color:#082033; font-weight:800}
+    .brand h1{font-size:1.05rem;margin:0;font-weight:700}
 
-        .price-tab-button:hover {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 74, 153, 0.2);
-        }
+    .nav-links{margin-left:auto; display:flex; gap:14px; align-items:center}
+    .nav-links a{color:#f1f9ff; text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; font-size:0.95rem}
+    .nav-links a:hover{background:rgba(255,255,255,0.06)}
 
-        .price-tab-button.active {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 74, 153, 0.4);
-            transform: translateY(-2px);
-        }
-        
-        .price-content {
-            display: none;
-            overflow-x: auto; 
-        }
-        .price-content.active {
-            display: block;
-        }
-        
-        .price-content table {
-            margin: 0 auto; 
-            max-width: 800px;
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .price-content th, .price-content td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .price-content th {
-            background-color: var(--primary-color); 
-            color: white;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        .price-content tr:nth-child(even) { 
-            background-color: #f8f9fa;
-        }
-        .price-highlight {
-            font-weight: 700;
-            color: var(--danger-color); 
-        }
+    /* Hamburger mobile */
+    .hamburger{display:none; background:transparent;border:0;color:white;font-size:1.1rem}
+    @media(max-width:880px){ .nav-links{display:none} .hamburger{display:block} }
 
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center; padding:44px 0}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.38)); border-radius:var(--radius); padding:36px; box-shadow:var(--shadow)}
+    .kicker{display:inline-block; background:rgba(255,176,0,0.14); color:#774b00; padding:6px 10px;border-radius:999px; font-weight:700; font-size:0.85rem}
+    h2.hero-title{margin:16px 0 8px;font-size:1.6rem;color:#072c4b}
+    p.lead{margin:0 0 16px;color:var(--muted)}
 
-        /* ===================================================================
-           PROCESS FLOW STYLING (VISUAL)
-        =================================================================== */
-        .process-flow {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            position: relative;
-            padding-top: 50px; 
-            margin-top: 40px;
-        }
-        .process-flow::before {
-            content: '';
-            position: absolute;
-            top: 65px; 
-            left: 10%;
-            right: 10%;
-            height: 4px;
-            background-color: var(--secondary-color);
-            z-index: 1; 
-        }
-        .step {
-            flex-basis: 22%; 
-            text-align: center;
-            position: relative;
-            z-index: 2; 
-            padding: 10px;
-        }
-        .step-icon {
-            width: 80px; 
-            height: 80px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 15px auto;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 5px solid var(--bg-white); 
-            transition: transform 0.3s;
-        }
-        .step:hover .step-icon {
-            transform: scale(1.1);
-        }
-        .step-icon i {
-            color: white;
-            font-size: 2.2em;
-        }
-        .step h4 {
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700}
+    .btn-primary{background:var(--accent); color:#072033}
+    .btn-ghost{background:transparent; border:2px solid rgba(7,18,38,0.06)}
 
-        /* Responsive untuk Process Flow */
-        @media (max-width: 768px) {
-            .process-flow {
-                flex-direction: column;
-                padding-top: 0;
-            }
-            .process-flow::before {
-                top: 0;
-                left: 30px; 
-                bottom: 0;
-                width: 4px;
-                right: auto;
-                height: 100%;
-            }
-            .step {
-                flex-basis: 100%;
-                text-align: left;
-                display: flex;
-                align-items: center;
-                gap: 20px;
-                padding: 20px 0;
-            }
-            .step-icon {
-                margin: 0;
-                flex-shrink: 0; 
-            }
-        }
-        
-        /* ===================================================================
-           DELIVERY PROMO STYLING (SUDAH DIPERBAIKI)
-        =================================================================== */
-        .delivery-promo {
-            /* Perubahan di sini: Menggunakan gradien biru dengan primary color */
-            background: linear-gradient(90deg, var(--primary-color) 0%, #0060c0 100%); 
-            color: white; /* Ganti warna teks menjadi putih agar kontras */
-            padding: 50px 30px; 
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 74, 153, 0.5); /* Box Shadow lebih menonjol dan biru */
-            margin-bottom: 40px;
-            text-align: center;
-        }
+    /* SERVICES */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .card{background:var(--card); border-radius:12px; padding:20px; box-shadow:var(--shadow); text-align:center}
+    .card i{font-size:34px; color:var(--primary); margin-bottom:12px}
+    .card h3{margin:6px 0 8px}
+    .card p{color:var(--muted); font-size:0.95rem}
+    .card:hover{transform:translateY(-6px); transition:transform .25s}
+    @media(max-width:1024px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:640px){ .hero{grid-template-columns:1fr; } .grid{grid-template-columns:1fr} }
 
-        .delivery-promo h3 {
-            font-size: 2.2em; 
-            font-weight: 800;
-            margin-top: 0;
-            color: var(--secondary-color); /* Judul menggunakan warna orange */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
+    /* PRICE & TABS */
+    .tabs{display:flex; gap:8px; justify-content:center; margin-bottom:18px; flex-wrap:wrap}
+    .tab-btn{padding:8px 14px; border-radius:999px; border:2px solid rgba(7,18,38,0.08); background:white; font-weight:700}
+    .tab-btn.active{background:var(--primary); color:white; border-color:var(--primary)}
+    .price-table{width:100%; border-collapse:collapse; margin:0 auto}
+    .price-table th, .price-table td{padding:12px 14px; border-bottom:1px solid #eef2f6}
+    .price-table th{background:linear-gradient(90deg,var(--primary), #07579b); color:white}
 
-        .delivery-promo p {
-            font-size: 1.2em; 
-            max-width: 700px;
-            margin: 15px auto 30px auto;
-            color: #f0f0f0; 
-        }
+    /* PROCESS */
+    .process{display:flex; gap:12px; align-items:center; justify-content:space-between}
+    .step{flex:1; text-align:center}
+    .step .dot{width:64px; height:64px; border-radius:50%; display:grid; place-items:center; margin:0 auto 12px; background:var(--primary); color:white}
+    @media(max-width:720px){ .process{flex-direction:column} .step{text-align:left} .step .dot{margin:0} }
 
-        .delivery-promo .delivery-icon-large {
-            font-size: 4.5em; /* Diperbesar */
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            display: block;
-            /* Animasi tambahan: pulse & bounce */
-            animation: pulse-icon 2s infinite, bounce-icon 3s ease-in-out infinite; 
-        }
-        
-        @keyframes pulse-icon {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        @keyframes bounce-icon {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+    /* TESTIMONIAL */
+    .testi{display:flex; gap:12px; flex-wrap:wrap}
+    .testi .item{flex:1; min-width:220px; border-radius:12px; padding:18px; background:linear-gradient(180deg,#ffffff,#fbfdff); box-shadow:var(--shadow)}
 
-        .delivery-promo a {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: var(--success-color); /* Tombol CTA menggunakan warna Sukses/Hijau */
-            color: white !important;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: background-color 0.3s, transform 0.3s;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(32, 142, 67, 0.5);
-        }
+    /* FOOTER */
+    footer{margin-top:24px; padding:20px; text-align:center; color:white; background:linear-gradient(90deg,var(--primary), #07579b); border-radius:12px}
 
-        .delivery-promo a:hover {
-            background-color: #179c3f;
-            transform: scale(1.05);
-        }
+    /* FAB whatsapp */
+    .fab{position:fixed; right:18px; bottom:18px; width:64px; height:64px; border-radius:999px; background:var(--success); display:grid; place-items:center; color:white; box-shadow:0 10px 30px rgba(31,167,79,0.28); z-index:999}
 
-        /* ===================================================================
-           TESTIMONIAL STYLING
-        =================================================================== */
-        .testimonial-grid {
-             display: flex;
-             gap: 20px;
-             flex-wrap: wrap; 
-             justify-content: center; 
-        }
-        .testimonial-card {
-             background-color: #f8f9fa;
-             padding: 25px;
-             border-radius: 12px;
-             flex: 1; 
-             min-width: 250px; 
-             max-width: 350px; 
-             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-             border-left: 4px solid var(--secondary-color);
-             margin-bottom: 10px;
-        }
-        .testimonial-card p {
-             font-style: italic;
-             margin-bottom: 15px;
-             color: #495057;
-        }
-        .testimonial-card h4 {
-             text-align: right;
-             color: var(--primary-color);
-             margin: 0;
-             font-weight: 600;
-             font-size: 1em;
-        }
-
-
-        /* ===================================================================
-           FOOTER STYLING
-        =================================================================== */
-        footer {
-            background-color: var(--primary-color); 
-            color: white;
-            padding: 20px 0;
-            font-size: 0.9em;
-            text-align: center;
-            margin-top: 40px; 
-            border-radius: 15px;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        footer a {
-            color: var(--secondary-color) !important;
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: white !important;
-        }
-
-        /* FAB WA */
-        .fab-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        .fab {
-            display: block;
-            width: 60px;
-            height: 60px;
-            background-color: var(--success-color); 
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            font-size: 2.2em;
-            box-shadow: 0 4px 15px rgba(32, 142, 67, 0.6);
-            transition: transform 0.3s ease;
-        }
-        .fab:hover {
-            transform: scale(1.15); 
-        }
-
-    </style>
+    /* tiny responsive tweaks */
+    @media(max-width:420px){ .brand h1{font-size:0.92rem} .hero-card{padding:20px} }
+  </style>
 </head>
 <body>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 900, 
-            once: true, 
-            disable: 'phone' 
-        });
-    </script>
-
-    <div class="navbar">
-        <div class="navbar-content">
-            <a href="#" class="navbar-logo">
-                <i class="fa-solid fa-screwdriver-wrench"></i> <span class="logo-brand">SURYA</span> TEKNISI
-            </a>
-            <div class="nav-links">
-                <a href="#layanan">Layanan</a>
-                <a href="#harga">Harga</a>
-                <a href="#delivery">Antar Jemput</a>
-                <a href="#proses">Proses</a>
-                <a href="#testimoni">Testimoni</a>
-                <a href="#kontak">Kontak</a>
-            </div>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <div class="logo">S</div>
+        <div>
+          <h1>Surya Teknisi</h1>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.88)">Service HP — Garansi 90 hari</div>
         </div>
-    </div>
+      </a>
 
-    <div class="header-parallax">
-        <div class="header-content" data-aos="fade-down">
-            <h1>SOLUSI SERVICE HP PROFESIONAL</h1>
-            <p>Spesialis Diagnosa Mainboard & Perbaikan Premium, Garansi Hingga 90 Hari.</p>
-            <a href="#delivery" style="display: inline-block; margin-top: 25px; padding: 14px 40px; background-color: var(--secondary-color); color: var(--text-color); text-decoration: none; border-radius: 50px; font-weight: 700; transition: all 0.3s;">ANTAR JEMPUT GRATIS SURABAYA!</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#layanan">Layanan</a>
+        <a href="#harga">Harga</a>
+        <a href="#proses">Proses</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-card" data-aos="fade-up">
+        <span class="kicker">Premium Workshop</span>
+        <h2 class="hero-title">Solusi Service HP Profesional di Surabaya</h2>
+        <p class="lead">Spesialis diagnosa mainboard & mikrosoldering, ganti layar original, perbaikan jalur charging, dan layanan antar-jemput 100% gratis di area Surabaya.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://wa.me/6285198331549?text=Halo%2C%20saya%20ingin%20reservasi" target="_blank"><i class="fa-brands fa-whatsapp"></i> Reservasi via WhatsApp</a>
+          <a class="btn btn-ghost" href="#harga">Lihat Harga</a>
         </div>
-    </div>
 
-    <div class="container">
-        <section class="warranty-box" data-aos="zoom-in" style="text-align: center;">
-            <h3>⭐ Jaminan Garansi Resmi Hingga 90 Hari!</h3>
-            <p>Kami hanya menggunakan suku cadang berkualitas dan memberikan ketenangan pikiran dengan garansi purna jual.</p>
-        </section>
+        <ul style="margin-top:18px;display:flex;gap:12px;padding:0;list-style:none">
+          <li style="font-weight:700;color:var(--primary)"><i class="fa-solid fa-check"></i> Garansi 90 hari</li>
+          <li style="font-weight:700;color:var(--primary)"><i class="fa-solid fa-truck-fast"></i> Antar-jemput Surabaya</li>
+        </ul>
+      </div>
 
-        <section class="section" id="layanan" data-aos="fade-up">
-            <h2>✨ Layanan Inti Kami</h2>
-            <p style="text-align: center; margin-bottom: 40px; color: #555;">Klik pada layanan yang diinginkan untuk memulai reservasi cepat via WhatsApp, atau gunakan tombol di bawah.</p>
-            <div class="layanan-grid">
-                
-                <div class="layanan-item" onclick="openWhatsApp('layar')" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <div class="layanan-item-content"><h3>Ganti Layar/LCD Original</h3><p>Pergantian layar retak, pecah, *blank*, atau *ghost touch*.</p></div>
-                </div>
-                
-                <div class="layanan-item" onclick="openWhatsApp('mainboard')" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fa-solid fa-microchip"></i>
-                    <div class="layanan-item-content"><h3>Servis Mainboard (Mikrosoldering)</h3><p>Perbaikan tingkat lanjut untuk HP mati total, *bootloop*, atau kerusakan IC.</p></div>
-                </div>
-                
-                <div class="layanan-item" onclick="openWhatsApp('baterai')" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fa-solid fa-battery-full"></i>
-                    <div class="layanan-item-content"><h3>Baterai & Pengisian Daya</h3><p>Mengganti baterai kembung/boros dan perbaikan jalur IC *charging*.</p></div>
-                </div>
-            </div>
-            
-            <a href="https://wa.me/6285198331549?text=Halo%2C%20saya%20ingin%20membuat%20reservasi%20service%20HP.%20Mohon%20bantuannya%20untuk%20diagnosa." 
-               target="_blank" 
-               class="layanan-cta-button" 
-               data-aos="zoom-in" data-aos-delay="400">
-                <i class="fa-brands fa-whatsapp"></i> Mulai Reservasi Sekarang
-            </a>
+      <aside data-aos="fade-left">
+        <div style="background:linear-gradient(180deg, #ffffff, #f0f6ff); padding:20px; border-radius:12px; box-shadow:var(--shadow)">
+          <h3 style="margin:0 0 8px">Booking Cepat</h3>
+          <p style="margin:0 0 12px;color:var(--muted)">Isi tipe perangkat dan keluhan. Kurir kami akan menghubungi untuk jemput.</p>
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <label for="name" style="display:block;margin-bottom:6px;font-weight:600">Nama</label>
+            <input id="name" name="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef9;margin-bottom:8px">
+            <label for="device" style="display:block;margin-bottom:6px;font-weight:600">Tipe HP</label>
+            <input id="device" name="device" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef9;margin-bottom:8px">
+            <label for="note" style="display:block;margin-bottom:6px;font-weight:600">Keluhan singkat</label>
+            <input id="note" name="note" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef9;margin-bottom:12px">
+            <button class="btn btn-primary" type="submit" style="width:100%"><i class="fa-solid fa-paper-plane"></i> Kirim via WhatsApp</button>
+          </form>
+        </div>
 
-        </section>
+        <div style="margin-top:14px;text-align:center;color:var(--muted,font-size:.95rem)">
+          <div style="font-weight:700">Kontak Cepat</div>
+          <a href="tel:085198331549" style="display:block;margin-top:6px;text-decoration:none;color:var(--primary);font-weight:700">0851 9833 1549</a>
+        </div>
+      </aside>
+    </section>
 
-        <section id="delivery" class="delivery-promo" data-aos="flip-down" style="text-align: center;">
-            <i class="fa-solid fa-truck-fast delivery-icon-large"></i> <h3>🚀 EKSLUSIF SURABAYA! JEMPUT & ANTAR BALIK 100% GRATIS!</h3>
-            <p>Tidak perlu repot keluar rumah! Teknisi kami akan menjemput perangkat Anda dengan aman dan mengantarkannya kembali setelah service selesai. **Hemat Waktu, Tanpa Biaya Tambahan, Tinggal Duduk Santai!**</p>
-            <a href="https://wa.me/6285198331549?text=Saya%20ingin%20memanfaatkan%20layanan%20antar%20jemput%20gratis%20untuk%20service%20HP%20di%20Surabaya." 
-               target="_blank">
-               <i class="fa-brands fa-whatsapp"></i> Klik untuk Jadwalkan Penjemputan Cepat
-            </a>
-        </section>
+    <!-- SERVICES -->
+    <section class="section" id="layanan" data-aos="fade-up">
+      <h2 style="text-align:center;margin-top:0">Layanan Unggulan</h2>
+      <p style="text-align:center;color:var(--muted)">Solusi lengkap — dari software ringan hingga mainboard mikrosoldering.</p>
 
-        <section class="section" id="harga" data-aos="fade-right">
-            <h2>💰 Daftar Harga Service Transparan</h2>
-            <p style="text-align: center; color: #555; margin-bottom: 25px;">Pilih kategori perangkat Anda untuk melihat perkiraan harga:</p>
-            
-            <div class="price-tabs-container" data-aos="fade-in">
-                <button class="price-tab-button active" onclick="showPrice('iphone', this)">Apple iPhone</button>
-                <button class="price-tab-button" onclick="showPrice('android', this)">Android Premium</button>
-                <button class="price-tab-button" onclick="showPrice('ic', this)">Mikrosoldering (IC)</button>
-            </div>
+      <div class="grid" style="margin-top:18px">
+        <div class="card" onclick="openWhatsAppPrefill('Ganti Layar - Tipe: ')">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h3>Ganti Layar / LCD</h3>
+          <p>Original & aftermarket. Garansi fungsi setelah pemasangan.</p>
+        </div>
+        <div class="card" onclick="openWhatsAppPrefill('Servis Mainboard - Tipe: ')">
+          <i class="fa-solid fa-microchip"></i>
+          <h3>Servis Mainboard & Mikrosoldering</h3>
+          <p>Perbaikan IC power, CPU reballing ringan, dan jalur charging.</p>
+        </div>
+        <div class="card" onclick="openWhatsAppPrefill('Ganti Baterai - Tipe: ')">
+          <i class="fa-solid fa-battery-three-quarters"></i>
+          <h3>Baterai & Charging</h3>
+          <p>Ganti baterai, perbaikan port pengisian, dan kalibrasi baterai.</p>
+        </div>
+      </div>
 
-            <div id="iphone" class="price-content active" data-aos="fade-up">
-                <table><thead><tr><th colspan="2">Apple iPhone (LCD, Baterai & Face ID)</th></tr></thead>
-                    <tbody>
-                        <tr><td>Ganti LCD iPhone 15 Pro Max</td><td class="price-highlight">Mulai Rp 1.100.000</td></tr>
-                        <tr><td>Ganti LCD iPhone 13 Pro</td><td class="price-highlight">Mulai Rp 550.000</td></tr>
-                        <tr><td>Ganti LCD iPhone 11</td><td class="price-highlight">Rp 450.000</td></tr>
-                        <tr><td>Ganti Baterai iPhone 14</td><td class="price-highlight">Rp 550.000</td></tr>
-                        <tr><td>Ganti Baterai iPhone 12</td><td class="price-highlight">Rp 400.000</td></tr>
-                        <tr><td>Perbaikan Face ID (Model X ke atas)</td><td class="price-highlight">Mulai Rp 800.000</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="android" class="price-content" data-aos="fade-up">
-                 <table><thead><tr><th colspan="2">Android Premium (Samsung, Xiaomi, dll.)</th></tr></thead>
-                 <tbody>
-                    <tr><td>Ganti LCD Samsung S23 Ultra</td><td class="price-highlight">Mulai Rp 2.000.000</td></tr>
-                    <tr><td>Ganti LCD Samsung S21 Ultra</td><td class="price-highlight">Mulai Rp 1.500.000</td></tr>
-                    <tr><td>Perbaikan/Ganti Kaca Belakang (Backdoor)</td><td class="price-highlight">Mulai Rp 100.000</td></tr>
-                    <tr><td>Ganti Baterai Xiaomi 12 Pro</td><td class="price-highlight">Mulai Rp 200.000</td></tr>
-                    <tr><td>Ganti Baterai Samsung A Series</td><td class="price-highlight">Mulai Rp 150.000</td></tr>
-                 </tbody>
-                 </table>
-            </div>
-            <div id="ic" class="price-content" data-aos="fade-up">
-                 <table><thead><tr><th colspan="2">Mikrosoldering & Servis Fungsional</th></tr></thead>
-                 <tbody>
-                    <tr><td>Perbaikan IC Power (HP Mati Total)</td><td class="price-highlight">Mulai Rp 600.000</td></tr>
-                    <tr><td>Perbaikan Jalur Charging/Port</td><td class="price-highlight">Mulai Rp 350.000</td></tr>
-                    <tr><td>Ganti/Perbaikan IC Kamera Belakang</td><td class="price-highlight">Mulai Rp 450.000</td></tr>
-                    <tr><td>Perbaikan Kerusakan Cairan (Water Damage)</td><td class="price-highlight">Konsultasi</td></tr>
-                    <tr><td>Ganti Modul Speaker & Mic</td><td class="price-highlight">Mulai Rp 250.000</td></tr>
-                 </tbody>
-                 </table>
-            </div>
-            <p style="text-align: center; font-size: 0.9em; color: #888; margin-top: 30px;">*Harga estimasi dan dapat berubah. Selalu hubungi kami untuk diagnosa dan harga final.</p>
-        </section>
+    </section>
 
-        <section class="section" id="proses" data-aos="fade-up">
-            <h2>🔍 Transparansi Proses Service</h2>
-            <p style="text-align: center; color: #555;">Kami menjamin proses kerja yang cepat dan transparan dari awal hingga akhir. Khusus area Surabaya, langkah 1 dan 4 dilakukan oleh kurir profesional kami.</p>
-            
-            <div class="process-flow">
-                
-                <div class="step" data-aos="zoom-in" data-aos-delay="50">
-                    <div class="step-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                    <h4>1. Jadwal & Penjemputan Kurir</h4>
-                    <p>Jadwalkan, Kurir kami menjemput perangkat di lokasi Anda (Surabaya Free).</p>
-                </div>
-                
-                <div class="step" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="step-icon"><i class="fa-solid fa-microscope"></i></div>
-                    <h4>2. Diagnosa Mendalam</h4>
-                    <p>Pengujian komponen (Hardware & Software) untuk menentukan akar masalah di workshop.</p>
-                </div>
-                
-                <div class="step" data-aos="zoom-in" data-aos-delay="350">
-                    <div class="step-icon"><i class="fa-solid fa-gear"></i></div>
-                    <h4>3. Proses Perbaikan</h4>
-                    <p>Eksekusi perbaikan dengan suku cadang berkualitas dan teknisi berpengalaman.</p>
-                </div>
-                
-                <div class="step" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h4>4. Quality Check & Pengantaran</h4>
-                    <p>Pengujian fungsi menyeluruh, lalu diantar kembali ke lokasi Anda (Surabaya Free).</p>
-                </div>
-                
-            </div>
-        </section>
+    <!-- DELIVERY PROMO -->
+    <section class="section" id="delivery" data-aos="flip-left" style="background:linear-gradient(90deg,#0b61b7,#07579b); color:white; text-align:center">
+      <h2 style="margin-top:0;color:var(--accent)">Jemput & Antar Gratis — Surabaya</h2>
+      <p>Proses aman dengan kurir profesional. Cukup pesan, kami jemput dan antar kembali setelah selesai.</p>
+      <a class="btn btn-primary" href="https://wa.me/6285198331549?text=Saya%20ingin%20memanfaatkan%20layanan%20antar%20jemput%20gratis%20Surabaya" target="_blank">Jadwalkan Penjemputan</a>
+    </section>
 
-        <section class="section" id="testimoni" data-aos="fade-left">
-            <h2>🗣️ Apa Kata Pelanggan Kami?</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #555;">Kumpulan ulasan nyata dari pelanggan yang puas dengan layanan kami.</p>
-            <div class="testimonial-grid">
-                <div class="testimonial-card" data-aos="zoom-in-up" data-aos-delay="100"><p>"Service LCD iPhone 11 di sini **cepat sekali, hanya 1 jam** dan hasilnya mulus! Garansi juga jelas."</p><h4>- Bima S. (Jakarta)</h4></div>
-                <div class="testimonial-card" data-aos="zoom-in-up" data-aos-delay="200"><p>"HP saya mati total kena air. Diservis di Surya Teknisi **akhirnya nyala lagi**. Data-data aman. Rekomen!"</p><h4>- Risa M. (Surabaya)</h4></div>
-                <div class="testimonial-card" data-aos="zoom-in-up" data-aos-delay="300"><p>"Ganti baterai Xiaomi jadi **awet lagi**. Pelayanan ramah dan harganya transparan sesuai janji."</p><h4>- Agus P. (Bandung)</h4></div>
-            </div>
-        </section>
-        
-        <section class="section" data-aos="fade-up" style="text-align: center;">
-             <h2>🧠 Pengetahuan Wajib Pengguna HP</h2>
-            <div style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
-                <div style="flex: 1; padding: 25px; border-radius: 8px; background-color: #f7f9fc; border-left: 5px solid var(--primary-color); min-width: 300px; text-align: left;" data-aos="fade-right">
-                    <h3><i class="fa-solid fa-code"></i> Kerusakan Software</h3>
-                    <p>Melibatkan sistem operasi. Seringkali dapat diselesaikan tanpa mengganti *spare part*.</p>
-                    <ul><li>Masalah Umum: *Bootloop*, Lupa Sandi/PIN, *Virus*, HP *Hang* total.</li></ul>
-                </div>
-                <div style="flex: 1; padding: 25px; border-radius: 8px; background-color: #f7f9fc; border-left: 5px solid var(--danger-color); min-width: 300px; text-align: left;" data-aos="fade-left">
-                    <h3><i class="fa-solid fa-box"></i> Kerusakan Hardware</h3>
-                    <p>Melibatkan komponen fisik. Memerlukan penggantian suku cadang atau perbaikan *motherboard*.</p>
-                    <ul><li>Masalah Umum: Layar retak, *Water Damage*, IC Power mati, *speaker* pecah.</li></ul>
-                </div>
-            </div>
-        </section>
+    <!-- PRICE -->
+    <section class="section" id="harga" data-aos="fade-up">
+      <h2 style="text-align:center;margin-top:0">Daftar Harga — Estimasi</h2>
+      <div class="tabs" role="tablist" aria-label="Kategori Harga">
+        <button class="tab-btn active" data-tab="iphone" onclick="switchTab(event)">iPhone</button>
+        <button class="tab-btn" data-tab="android" onclick="switchTab(event)">Android</button>
+        <button class="tab-btn" data-tab="ic" onclick="switchTab(event)">Mikrosoldering</button>
+      </div>
 
-    </div> 
-    
-    <footer id="kontak" data-aos="fade-up">
-        <p>Surya Teknisi &copy; 2025 | Keahlian, Kejujuran, dan Garansi adalah Prioritas Kami.</p>
-        <p>Hubungi Kami: <a href="tel:085198331549">0851 9833 1549</a> | Alamat Workshop: Surabaya</p>
+      <div id="iphone" class="tab-content">
+        <table class="price-table"><thead><tr><th>Layanan</th><th>Estimasi</th></tr></thead><tbody>
+          <tr><td>Ganti LCD iPhone 15 Pro Max</td><td>Mulai Rp 1.100.000</td></tr>
+          <tr><td>Ganti Baterai iPhone 14</td><td>Rp 550.000</td></tr>
+        </tbody></table>
+      </div>
+
+      <div id="android" class="tab-content" style="display:none">
+        <table class="price-table"><thead><tr><th>Layanan</th><th>Estimasi</th></tr></thead><tbody>
+          <tr><td>Ganti LCD Samsung S23 Ultra</td><td>Mulai Rp 2.000.000</td></tr>
+          <tr><td>Ganti Baterai Xiaomi</td><td>Mulai Rp 200.000</td></tr>
+        </tbody></table>
+      </div>
+
+      <div id="ic" class="tab-content" style="display:none">
+        <table class="price-table"><thead><tr><th>Layanan</th><th>Estimasi</th></tr></thead><tbody>
+          <tr><td>Perbaikan IC Power (HP Mati)</td><td>Mulai Rp 600.000</td></tr>
+          <tr><td>Perbaikan Jalur Charging</td><td>Mulai Rp 350.000</td></tr>
+        </tbody></table>
+      </div>
+
+      <p style="text-align:center;color:var(--muted);margin-top:14px">*Harga estimasi. Hubungi kami untuk diagnosa final & penawaran terbaik.</p>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="proses" data-aos="fade-up">
+      <h2 style="text-align:center;margin-top:0">Proses Kerja</h2>
+      <div class="process" style="margin-top:18px">
+        <div class="step"><div class="dot"><i class="fa-solid fa-calendar-check"></i></div><strong>Jemput</strong><div style="color:var(--muted)">Kurir jemput perangkat</div></div>
+        <div class="step"><div class="dot"><i class="fa-solid fa-microscope"></i></div><strong>Diagnosa</strong><div style="color:var(--muted)">Analisa hardware & software</div></div>
+        <div class="step"><div class="dot"><i class="fa-solid fa-wrench"></i></div><strong>Perbaikan</strong><div style="color:var(--muted)">Eksekusi teknisi berpengalaman</div></div>
+        <div class="step"><div class="dot"><i class="fa-solid fa-shield-halved"></i></div><strong>QC & Antar</strong><div style="color:var(--muted)">Testing & pengantaran kembali</div></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="section" id="testimoni" data-aos="fade-up">
+      <h2 style="text-align:center;margin-top:0">Testimoni Pelanggan</h2>
+      <div class="testi" style="margin-top:16px">
+        <div class="item">"Service cepat, hasil rapi, dan garansi jelas." <div style="text-align:right;margin-top:8px;font-weight:700;color:var(--primary)">— Bima S.</div></div>
+        <div class="item">"HP kena air, akhirnya nyala lagi. Data aman." <div style="text-align:right;margin-top:8px;font-weight:700;color:var(--primary)">— Risa M.</div></div>
+        <div class="item">"Pelayanan ramah dan harga transparan." <div style="text-align:right;margin-top:8px;font-weight:700;color:var(--primary)">— Agus P.</div></div>
+      </div>
+    </section>
+
+    <!-- KNOWLEDGE -->
+    <section class="section" data-aos="fade-up">
+      <h2 style="text-align:center;margin-top:0">Pengetahuan Singkat</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px">
+        <div style="flex:1;min-width:260px;background:var(--card);padding:16px;border-radius:10px;box-shadow:var(--shadow)"><h4>Kerusakan Software</h4><p style="color:var(--muted)">Bootloop, virus, dan masalah software biasanya dapat diperbaiki tanpa ganti sparepart.</p></div>
+        <div style="flex:1;min-width:260px;background:var(--card);padding:16px;border-radius:10px;box-shadow:var(--shadow)"><h4>Kerusakan Hardware</h4><p style="color:var(--muted)">Melibatkan penggantian komponen atau perbaikan mainboard.</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="kontak">
+      <div style="padding:18px">
+        <div style="font-weight:800;font-size:1.05rem">Surya Teknisi — Service HP Surabaya</div>
+        <div style="margin-top:6px">Tel: <a href="tel:085198331549" style="color:rgba(255,255,255,0.95);text-decoration:none">0851 9833 1549</a> • Garansi 90 hari</div>
+        <div style="margin-top:10px;color:rgba(255,255,255,0.9)">© Surya Teknisi 2025 • Keahlian & Kejujuran</div>
+      </div>
     </footer>
 
-    <div class="fab-container">
-        <a href="https://wa.me/6285198331549" target="_blank" class="fab"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
+  </main>
 
-    <script>
-        // --- FUNGSI TAB HARGA ---
-        function showPrice(tabId, element) {
-            const contents = document.querySelectorAll('.price-content');
-            contents.forEach(content => content.classList.remove('active'));
-            const buttons = document.querySelectorAll('.price-tab-button');
-            buttons.forEach(button => button.classList.remove('active'));
+  <a class="fab" href="https://wa.me/6285198331549" target="_blank" aria-label="Chat WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-            document.getElementById(tabId).classList.add('active');
-            if (element) element.classList.add('active');
-        }
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:700,once:true});
 
-        // --- FUNGSI OPEN WHATSAPP DENGAN PESAN OTOMATIS ---
-        
-        const serviceMap = {
-            layar: "Reservasi Ganti Layar/LCD Original. Tolong infokan tipe HP saya: ",
-            mainboard: "Reservasi Servis Mainboard (Mikrosoldering). Tolong infokan tipe HP saya: ",
-            baterai: "Reservasi Baterai & Pengisian Daya. Tolong infokan tipe HP saya: "
-        };
+    // Hamburger toggle
+    const ham = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    ham.addEventListener('click', ()=>{ if(navLinks.style.display==='flex'){navLinks.style.display='none'}else{navLinks.style.display='flex'; navLinks.style.flexDirection='column'; navLinks.style.background='linear-gradient(180deg, rgba(11,97,183,0.96), rgba(3,64,130,0.96))'; navLinks.style.position='absolute'; navLinks.style.right='18px'; navLinks.style.top='64px'; navLinks.style.padding='12px'; navLinks.style.borderRadius='10px'}})
 
-        function openWhatsApp(serviceId) {
-            const waNumber = '6285198331549'; 
-            const message = encodeURIComponent(serviceMap[serviceId]);
-            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
-        }
+    // Tabs
+    function switchTab(e){
+      const btns = document.querySelectorAll('.tab-btn'); btns.forEach(b=>b.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      const target = e.currentTarget.getAttribute('data-tab');
+      document.querySelectorAll('.tab-content').forEach(c=>c.style.display='none');
+      document.getElementById(target).style.display='block';
+    }
 
-        // Inisialisasi: Aktifkan tab iPhone saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', () => {
-            const iphoneButton = document.querySelector('.price-tab-button[onclick*="iphone"]');
-            if(iphoneButton) showPrice('iphone', iphoneButton);
-        });
-    </script>
+    // Booking form -> WA message
+    function submitBooking(e){
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value || '');
+      const device = encodeURIComponent(document.getElementById('device').value || '');
+      const note = encodeURIComponent(document.getElementById('note').value || '');
+      const wa = `https://wa.me/6285198331549?text=Reservasi%20Booking%20%0AName:%20${name}%0ATipe:%20${device}%0AKeluhan:%20${note}`;
+      window.open(wa,'_blank');
+    }
+
+    // Card click prefill
+    function openWhatsAppPrefill(prefill){
+      const msg = encodeURIComponent(prefill);
+      window.open(`https://wa.me/6285198331549?text=${msg}`,'_blank');
+    }
+
+    // Improve mobile viewport render for GitHub Pages: remove background-attachment usage and make images fluid
+  </script>
 </body>
 </html>
