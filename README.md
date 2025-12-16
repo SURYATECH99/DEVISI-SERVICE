@@ -246,7 +246,7 @@
           </tbody>
         </table>
       </div>
-      <p= style"text-align:center;color:var(--muted);margin-top:12px">*dikarena kan banyak kualitas yang tersedia, Estimasi harga — hubungi kami untuk konfirmasi final. Gratis antar jemput area Surabaya.</p>
+      <p= style"text-align:center;color:var(--muted);margin-top:12px">*dikarena kan banyak kualitas yang tersedia, Estimasi harga — hubungi kami untuk konfirmasi final. Gratis antar jemput area Surabaya.*</p>
     </section>
 
     <!-- TRACKING -->
