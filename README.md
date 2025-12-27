@@ -176,7 +176,7 @@
             </form>
 
             <div style="margin-top:12px;display:flex;gap:8px;align-items:center;justify-content:space-between">
-              <div><strong>Kontak:</strong> <a href="tel:085233400200" style="color:var(--nav);font-weight:700">0851 9833 1549</a></div>
+              <div><strong>Kontak:</strong> <a href="tel:085233400200" style="color:var(--nav);font-weight:700">0852 3340 0200</a></div>
               <div><button class="btn-ghost btn-3d" onclick="openAdminModal()">Admin Login</button></div>
             </div>
           </div>
