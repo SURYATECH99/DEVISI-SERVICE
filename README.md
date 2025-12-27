@@ -358,7 +358,7 @@
   </div>
 
   <!-- Floating WhatsApp -->
-  <a class="wa-float" id="waFloat" href="https://wa.me/6285198331549?text=Halo%20SURYATECH,%20saya%20ingin%20booking%20servis" target="_blank" aria-label="Chat WhatsApp">
+  <a class="wa-float" id="waFloat" href="https://wa.me/62085233400200?text=Halo%20SURYATECH,%20saya%20ingin%20booking%20servis" target="_blank" aria-label="Chat WhatsApp">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="wa-icon" alt="WhatsApp" />
   </a>
 
@@ -445,7 +445,7 @@
       const note = encodeURIComponent(document.getElementById('note').value || '');
       // Craft message (Indonesian)
       const text = `Reservasi%20SURYATECH%0AName:%20${name}%0AWhatsApp:%20${phone}%0ATipe:%20${device}%0AKeluhan:%20${note}`;
-      const waNumber = '6285198331549'; // your number
+      const waNumber = '62085233400200'; // your number
       window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
     }
 
