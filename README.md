@@ -212,7 +212,7 @@
     <section id="delivery" class="promo" data-aos="fade-left">
       <h3 style="margin:0;color:#071428">Jemput & Antar Gratis — Surabaya</h3>
       <p style="margin-top:8px;color:#071428">Kurir profesional, pengemasan aman, tracking service tersedia.</p>
-      <a class="btn btn-gold" href="#tracking" style="margin-top:12px;display:inline-block">Jadwalkan Penjemputan</a>
+      <a class="btn btn-gold" href="#tracking" style="margin-top:12px;display:inline-block">CEK STATUS PERBAIKAN</a>
     </section>
 
     <!-- PRICE -->
